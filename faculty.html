@@ -1,0 +1,3169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Job Opportunities | SMART HIRING</title>
+    <meta name="description" content="Find faculty positions that match your skills and research interests">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@500;600;700&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --primary: #1a73e8;
+            --primary-dark: #0d47a1;
+            --primary-light: #e8f0fe;
+            --primary-50: #e3f2fd;
+            --primary-700: #1976d2;
+            --secondary: #ff6d00;
+            --secondary-dark: #e65100;
+            --accent: #00c4cc;
+            --dark: #1e2a3a;
+            --darker: #0f1721;
+            --light: #f8f9fa;
+            --gray: #6c757d;
+            --light-gray: #e9ecef;
+            --white: #ffffff;
+            --text: #212529;
+            --text-light: #6c757d;
+            --border: #dee2e6;
+            --border-light: #e9ecef;
+            --card: #ffffff;
+            --success: #28a745;
+            --warning: #ffc107;
+            --danger: #dc3545;
+            --gradient-primary: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+            --gradient-dark: linear-gradient(135deg, var(--dark) 0%, var(--darker) 100%);
+            --gradient-secondary: linear-gradient(135deg, var(--secondary) 0%, #ff9d00 100%);
+            --gradient-premium: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 15px 40px rgba(0, 0, 0, 0.15);
+            --radius: 12px;
+            --radius-xs: 8px;
+            --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html,
+        body {
+            height: 100%;
+        }
+
+        body {
+            margin: 0;
+            font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+            color: var(--text);
+            background: linear-gradient(160deg, rgba(15, 76, 219, 0.05), rgba(26, 115, 232, 0.03)) no-repeat fixed, var(--bg);
+            line-height: 1.6;
+        }
+
+        a {
+            color: var(--primary);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        a:hover {
+            text-decoration: underline;
+            color: var(--primary-700);
+        }
+
+        /* Header */
+        .nav {
+            position: sticky;
+            top: 0;
+            backdrop-filter: saturate(180%) blur(12px);
+            background: rgba(255, 255, 255, 0.85);
+            border-bottom: 1px solid rgba(15, 23, 42, 0.05);
+            z-index: 50;
+            box-shadow: 0 1px 3px rgba(15, 23, 42, 0.04);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        .nav-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 72px;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-family: Poppins, Inter, sans-serif;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+        }
+
+        .logo {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 12px;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            color: white;
+            box-shadow: 0 8px 18px rgba(26, 115, 232, 0.25);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .logo::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+            pointer-events: none;
+        }
+
+        .logo-mark {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: #fff;
+            box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.35);
+        }
+
+        .brand-name {
+            font-size: 20px;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 32px;
+            align-items: center;
+        }
+
+        .nav-link {
+            font-weight: 500;
+            color: var(--text-light);
+            transition: var(--transition);
+            padding: 8px 0;
+            position: relative;
+        }
+
+        .nav-link:hover {
+            color: var(--primary);
+        }
+
+        .nav-link.active {
+            color: var(--primary);
+            font-weight: 600;
+        }
+
+        .nav-link.active::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+            border-radius: 999px;
+        }
+
+        .nav-cta a {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 20px;
+            border-radius: 12px;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            color: white;
+            font-weight: 600;
+            box-shadow: 0 8px 18px rgba(26, 115, 232, 0.25);
+            transition: var(--transition);
+        }
+
+        .nav-cta a:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 24px rgba(26, 115, 232, 0.3);
+            text-decoration: none;
+        }
+
+        /* Page Header */
+        .page-header {
+            padding: 40px 0 24px;
+        }
+
+        .page-header h1 {
+            font-size: 36px;
+            line-height: 1.2;
+            margin: 0 0 12px 0;
+            letter-spacing: -0.02em;
+            font-weight: 700;
+            background: linear-gradient(135deg, #0f172a, #334155);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .page-header p {
+            margin: 0;
+            color: var(--text-light);
+            font-size: 16px;
+            max-width: 600px;
+        }
+
+        /* Card */
+        .card {
+            background: var(--card);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            border: 1px solid var(--border-light);
+            transition: var(--transition);
+        }
+
+        .card:hover {
+            box-shadow: var(--shadow-lg);
+        }
+
+        /* Dashboard Layout */
+        .dash {
+            display: grid;
+            grid-template-columns: 300px 1fr;
+            gap: 24px;
+            margin-bottom: 60px;
+        }
+
+        /* Sidebar */
+        .sidebar {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        .side-card {
+            padding: 24px;
+        }
+
+        .side-card h3 {
+            margin: 0 0 16px 0;
+            font-size: 18px;
+            font-weight: 600;
+        }
+
+        .profile-summary {
+            display: grid;
+            gap: 12px;
+            font-size: 15px;
+            color: var(--text-light);
+        }
+
+        .summary-chip {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 12px;
+            background: var(--primary-50);
+            border-radius: 999px;
+            font-size: 13px;
+            color: var(--primary-700);
+            border: 1px solid rgba(37, 99, 235, 0.1);
+        }
+
+        .filter-section {
+            margin-bottom: 20px;
+        }
+
+        .filter-section h4 {
+            margin: 0 0 12px 0;
+            font-size: 15px;
+            font-weight: 600;
+            color: var(--text);
+        }
+
+        .filter-options {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .filter-option {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            cursor: pointer;
+            font-size: 14px;
+            color: var(--text-light);
+            transition: var(--transition);
+        }
+
+        .filter-option:hover {
+            color: var(--primary);
+        }
+
+        .filter-option input {
+            accent-color: var(--primary);
+        }
+
+        /* Job Listings */
+        .job-listings {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .job-card {
+            padding: 24px;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .job-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+            opacity: 0;
+            transition: var(--transition);
+        }
+
+        .job-card:hover::before {
+            opacity: 1;
+        }
+
+        .job-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+
+        .job-title {
+            font-size: 20px;
+            font-weight: 600;
+            margin: 0 0 8px 0;
+            color: var(--text);
+        }
+
+        .job-institution {
+            font-size: 16px;
+            color: var(--primary);
+            font-weight: 500;
+            margin: 0 0 4px 0;
+        }
+
+        .job-location {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 14px;
+            color: var(--text-light);
+            margin: 0;
+        }
+
+        .job-match {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 6px 12px;
+            background: var(--success);
+            color: white;
+            border-radius: 999px;
+            font-size: 13px;
+            font-weight: 600;
+        }
+
+        .difficulty-badge {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            padding: 6px 12px;
+            border-radius: 999px;
+            font-size: 13px;
+            font-weight: 600;
+            border: 1px solid;
+        }
+
+        .difficulty-badge[data-difficulty="1"],
+        .difficulty-badge[data-difficulty="2"],
+        .difficulty-badge[data-difficulty="3"] {
+            background: rgba(16, 185, 129, 0.1);
+            color: var(--success);
+            border-color: var(--success);
+        }
+
+        .difficulty-badge[data-difficulty="4"],
+        .difficulty-badge[data-difficulty="5"],
+        .difficulty-badge[data-difficulty="6"] {
+            background: rgba(245, 158, 11, 0.1);
+            color: var(--warning);
+            border-color: var(--warning);
+        }
+
+        .difficulty-badge[data-difficulty="7"],
+        .difficulty-badge[data-difficulty="8"],
+        .difficulty-badge[data-difficulty="9"],
+        .difficulty-badge[data-difficulty="10"] {
+            background: rgba(239, 68, 68, 0.1);
+            color: var(--danger);
+            border-color: var(--danger);
+        }
+
+        .job-details {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 16px;
+            margin: 8px 0;
+        }
+
+        .job-detail {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 14px;
+            color: var(--text-light);
+        }
+
+        .job-detail i {
+            color: var(--primary);
+            width: 16px;
+            text-align: center;
+        }
+
+        .job-description {
+            color: var(--text-light);
+            font-size: 15px;
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        .job-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .job-tag {
+            padding: 6px 12px;
+            background: var(--primary-50);
+            color: var(--primary-700);
+            border-radius: 999px;
+            font-size: 13px;
+            font-weight: 500;
+        }
+
+        .job-actions {
+            display: flex;
+            gap: 12px;
+            margin-top: 8px;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding: 12px 20px;
+            border-radius: 12px;
+            border: 1px solid transparent;
+            cursor: pointer;
+            font-weight: 600;
+            letter-spacing: 0.01em;
+            transition: var(--transition);
+            font-size: 14px;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            color: #fff;
+            box-shadow: 0 8px 18px rgba(26, 115, 232, 0.25);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 24px rgba(26, 115, 232, 0.3);
+        }
+
+        .btn-ghost {
+            background: #fff;
+            border-color: var(--border);
+            color: var(--text);
+        }
+
+        .btn-ghost:hover {
+            background: var(--primary-50);
+            border-color: var(--primary);
+        }
+
+        /* Empty State */
+        .empty-state {
+            text-align: center;
+            padding: 60px 20px;
+        }
+
+        .empty-state-icon {
+            font-size: 48px;
+            margin-bottom: 16px;
+            color: var(--muted-light);
+        }
+
+        .empty-state h3 {
+            margin: 0 0 12px 0;
+            font-size: 20px;
+            color: var(--text);
+        }
+
+        .empty-state p {
+            margin: 0 0 24px 0;
+            color: var(--text-light);
+            max-width: 400px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Stats */
+        .stats {
+            display: flex;
+            justify-content: space-between;
+            margin: 24px 0;
+            text-align: center;
+        }
+
+        .stat {
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+        }
+
+        .stat-value {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 4px;
+        }
+
+        .stat-label {
+            font-size: 13px;
+            color: var(--text-light);
+        }
+
+        /* Test Modal Styles */
+        .test-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: 1000;
+            overflow-y: auto;
+        }
+        
+        .test-modal.active {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        
+        .test-modal-content {
+            background: var(--card);
+            border-radius: var(--radius);
+            max-width: 800px;
+            width: 100%;
+            max-height: 90vh;
+            overflow-y: auto;
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .test-modal-header {
+            padding: 24px;
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .test-modal-title {
+            font-size: 20px;
+            font-weight: 600;
+            color: var(--text);
+            margin: 0;
+        }
+        
+        .test-modal-close {
+            background: none;
+            border: none;
+            font-size: 24px;
+            color: var(--muted);
+            cursor: pointer;
+            padding: 0;
+            width: 32px;
+            height: 32px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            transition: var(--transition);
+        }
+        
+        .test-modal-close:hover {
+            background: var(--border-light);
+            color: var(--text);
+        }
+        
+        .test-modal-body {
+            padding: 24px;
+        }
+        
+        .test-info {
+            background: var(--primary-50);
+            border: 1px solid rgba(37, 99, 235, 0.2);
+            border-radius: var(--radius-sm);
+            padding: 16px;
+            margin-bottom: 24px;
+        }
+        
+        .test-info h4 {
+            margin: 0 0 8px 0;
+            color: var(--primary-700);
+            font-size: 16px;
+        }
+        
+        .test-info p {
+            margin: 0;
+            color: var(--primary-600);
+            font-size: 14px;
+        }
+        
+        .test-question {
+            margin-bottom: 24px;
+            padding: 20px;
+            border: 1px solid var(--border);
+            border-radius: var(--radius-sm);
+            background: var(--card);
+        }
+        
+        .question-number {
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 8px;
+        }
+        
+        .question-text {
+            font-size: 16px;
+            line-height: 1.6;
+            margin-bottom: 16px;
+            color: var(--text);
+        }
+        
+        .answer-input {
+            width: 100%;
+            min-height: 100px;
+            padding: 12px;
+            border: 1px solid var(--border);
+            border-radius: var(--radius-xs);
+            font-family: inherit;
+            font-size: 14px;
+            resize: vertical;
+            transition: var(--transition);
+        }
+        
+        .answer-input:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+        }
+        
+        .test-actions {
+            padding: 24px;
+            border-top: 1px solid var(--border);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .test-timer {
+            font-weight: 600;
+            color: var(--warning);
+            font-size: 16px;
+        }
+        
+        
+        .confirmation-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: 1001;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .confirmation-modal.active {
+            display: flex;
+        }
+        
+        .confirmation-content {
+            background: var(--card);
+            border-radius: var(--radius);
+            padding: 32px;
+            max-width: 400px;
+            width: 90%;
+            text-align: center;
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .confirmation-content h3 {
+            margin: 0 0 16px 0;
+            color: var(--text);
+            font-size: 20px;
+        }
+        
+        .confirmation-content p {
+            margin: 0 0 24px 0;
+            color: var(--text-light);
+            line-height: 1.5;
+        }
+        
+        .confirmation-buttons {
+            display: flex;
+            gap: 12px;
+            justify-content: center;
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .dash {
+                grid-template-columns: 1fr;
+            }
+            
+            .test-modal-content {
+                margin: 10px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none;
+            }
+
+            .job-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 12px;
+            }
+
+            .job-actions {
+                width: 100%;
+            }
+
+            .job-actions .btn {
+                flex: 1;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 16px;
+            }
+
+            .page-header {
+                padding: 24px 0 16px;
+            }
+
+            .page-header h1 {
+                font-size: 28px;
+            }
+
+            .job-card {
+                padding: 20px;
+            }
+        }
+        
+        /* Message System Styles */
+        .conversation-item:hover {
+            background: var(--light);
+            border-color: var(--primary);
+        }
+        
+        .unread-badge {
+            background: var(--danger);
+            color: white;
+            font-size: 10px;
+            font-weight: 600;
+            padding: 2px 6px;
+            border-radius: 10px;
+            min-width: 18px;
+            text-align: center;
+            line-height: 1.2;
+        }
+        
+        .message {
+            animation: fadeInUp 0.3s ease-out;
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        #newMessageText {
+            font-family: inherit;
+            font-size: 14px;
+            line-height: 1.4;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            transition: var(--transition);
+        }
+        
+        #newMessageText:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(26, 115, 232, 0.1);
+        }
+        
+        .card-header {
+            padding: 20px 24px;
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .card-footer {
+            padding: 20px 24px;
+            border-top: 1px solid var(--border);
+            background: var(--light);
+        }
+        
+        /* Settings Styles */
+        .settings-menu {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            margin-top: 16px;
+        }
+        
+        .settings-link {
+            display: flex;
+            align-items: center;
+            padding: 12px 16px;
+            border-radius: 8px;
+            text-decoration: none;
+            color: var(--text);
+            transition: var(--transition);
+            border: 1px solid transparent;
+        }
+        
+        .settings-link:hover {
+            background: var(--light);
+            color: var(--primary);
+            text-decoration: none;
+        }
+        
+        .settings-link.active {
+            background: var(--primary-light);
+            color: var(--primary);
+            border-color: var(--primary);
+            font-weight: 600;
+        }
+        
+        .settings-content {
+            width: 100%;
+        }
+        
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+        
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .form-group label {
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: var(--text);
+        }
+        
+        .form-control {
+            padding: 12px 16px;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            font-size: 14px;
+            transition: var(--transition);
+            font-family: inherit;
+        }
+        
+        .form-control:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(26, 115, 232, 0.1);
+        }
+        
+        .form-text {
+            font-size: 12px;
+            color: var(--text-light);
+            margin-top: 4px;
+        }
+        
+        .form-actions {
+            display: flex;
+            justify-content: flex-end;
+            gap: 12px;
+            margin-top: 24px;
+        }
+        
+        .notification-group {
+            margin-bottom: 24px;
+        }
+        
+        .notification-group h4 {
+            margin: 0 0 16px 0;
+            color: var(--text);
+            font-size: 16px;
+            font-weight: 600;
+        }
+        
+        .checkbox-group {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        
+        .checkbox-label {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            cursor: pointer;
+            padding: 8px;
+            border-radius: 6px;
+            transition: var(--transition);
+        }
+        
+        .checkbox-label:hover {
+            background: var(--light);
+        }
+        
+        .checkbox-label input[type="checkbox"] {
+            width: 18px;
+            height: 18px;
+            accent-color: var(--primary);
+        }
+        
+        .checkmark {
+            display: none;
+        }
+        
+        @media (max-width: 768px) {
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+            
+            .settings-menu {
+                flex-direction: row;
+                overflow-x: auto;
+                gap: 4px;
+            }
+            
+            .settings-link {
+                white-space: nowrap;
+                padding: 8px 12px;
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header class="nav">
+        <div class="container">
+            <div class="nav-inner">
+                <div class="brand" aria-label="SMART HIRING">
+                    <div class="logo" aria-hidden="true"><span class="logo-mark"></span></div>
+                    <div class="brand-name">SMART HIRING</div>
+                </div>
+
+                <div class="nav-menu">
+                    <a href="#" class="nav-link active" data-section="jobs">Job Opportunities</a>
+                    <a href="#" class="nav-link" data-section="applications">Applications</a>
+                    <a href="#" class="nav-link" data-section="messages">Messages</a>
+                    <a href="#" class="nav-link" data-section="settings">Settings</a>
+                </div>
+
+                <div class="nav-cta">
+                    <a href="#" onclick="handleLogout(); return false;">Logout</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="page-header">
+            <h1>Job Opportunities</h1>
+            <p>Discover faculty positions that match your skills, research interests, and career goals.</p>
+
+            <div class="stats">
+                <div class="stat">
+                    <div class="stat-value" id="totalJobs">12</div>
+                    <div class="stat-label">Total Positions</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-value" id="matchedJobs">8</div>
+                    <div class="stat-label">Perfect Matches</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-value" id="appliedJobs">2</div>
+                    <div class="stat-label">Applied</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="dash">
+            <aside class="sidebar">
+                <div class="card side-card">
+                    <h3>Your Profile Summary</h3>
+                    <div class="profile-summary" id="summary">
+                        <div><strong>Dr. Jane Doe</strong></div>
+                        <div class="muted">Computer Science</div>
+                        <div class="muted">PhD in Artificial Intelligence</div>
+                        <div class="summary-chip">Machine Learning</div>
+                        <div class="summary-chip">Data Science</div>
+                        <div class="summary-chip">Neural Networks</div>
+                    </div>
+                </div>
+
+                <div class="card side-card">
+                    <h3>Filter Opportunities</h3>
+
+                    <div class="filter-section">
+                        <h4>Difficulty Level</h4>
+                        <div class="filter-options">
+                            <label class="filter-option">
+                                <input type="checkbox" checked data-difficulty="easy">
+                                <span>Easy (1-3 points)</span>
+                            </label>
+                            <label class="filter-option">
+                                <input type="checkbox" checked data-difficulty="medium">
+                                <span>Medium (4-6 points)</span>
+                            </label>
+                            <label class="filter-option">
+                                <input type="checkbox" checked data-difficulty="hard">
+                                <span>Hard (7-10 points)</span>
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <div class="filter-section">
+                        <h4>Test Requirement</h4>
+                        <div class="filter-options">
+                            <label class="filter-option">
+                                <input type="checkbox" checked data-test="with-test">
+                                <span>With Mock Test</span>
+                            </label>
+                            <label class="filter-option">
+                                <input type="checkbox" checked data-test="no-test">
+                                <span>No Test Required</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="filter-section">
+                        <h4>Job Type</h4>
+                        <div class="filter-options">
+                            <label class="filter-option">
+                                <input type="checkbox" checked>
+                                <span>Full-time</span>
+                            </label>
+                            <label class="filter-option">
+                                <input type="checkbox">
+                                <span>Part-time</span>
+                            </label>
+                            <label class="filter-option">
+                                <input type="checkbox">
+                                <span>Visiting Faculty</span>
+                            </label>
+                            <label class="filter-option">
+                                <input type="checkbox">
+                                <span>Adjunct Professor</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="filter-section">
+                        <h4>Location</h4>
+                        <div class="filter-options">
+                            <label class="filter-option">
+                                <input type="checkbox" checked>
+                                <span>On-site</span>
+                            </label>
+                            <label class="filter-option">
+                                <input type="checkbox">
+                                <span>Remote</span>
+                            </label>
+                            <label class="filter-option">
+                                <input type="checkbox">
+                                <span>Hybrid</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="filter-section">
+                        <h4>Salary Range</h4>
+                        <div class="filter-options">
+                            <label class="filter-option">
+                                <input type="checkbox" checked>
+                                <span>$80,000+</span>
+                            </label>
+                            <label class="filter-option">
+                                <input type="checkbox" checked>
+                                <span>$60,000 - $80,000</span>
+                            </label>
+                            <label class="filter-option">
+                                <input type="checkbox">
+                                <span>$40,000 - $60,000</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </aside>
+
+            <section class="job-listings">
+                <!-- Job Card 1 -->
+                <div class="card job-card">
+                    <div class="job-header">
+                        <div>
+                            <h2 class="job-title">Assistant Professor - Computer Science</h2>
+                            <p class="job-institution">Stanford University</p>
+                            <p class="job-location">
+                                <i>📍</i> Stanford, California
+                            </p>
+                        </div>
+                        <div style="display: flex; gap: 8px; align-items: center;">
+                            <div class="job-match">
+                                <i>✓</i> 94% Match
+                            </div>
+                            <div class="difficulty-badge" data-difficulty="8">
+                                <i class="fas fa-star"></i> 8/10
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="job-details">
+                        <div class="job-detail">
+                            <i>💰</i> $95,000 - $120,000
+                        </div>
+                        <div class="job-detail">
+                            <i>⏱️</i> Full-time
+                        </div>
+                        <div class="job-detail">
+                            <i>🎓</i> PhD Required
+                        </div>
+                        <div class="job-detail">
+                            <i>📅</i> Posted 2 days ago
+                        </div>
+                    </div>
+
+                    <p class="job-description">
+                        The Department of Computer Science at Stanford University invites applications for a
+                        tenure-track assistant professor position in Artificial Intelligence and Machine Learning. We
+                        are particularly interested in candidates with expertise in deep learning, natural language
+                        processing, and computer vision.
+                    </p>
+
+                    <div class="job-tags">
+                        <span class="job-tag">Artificial Intelligence</span>
+                        <span class="job-tag">Machine Learning</span>
+                        <span class="job-tag">Deep Learning</span>
+                        <span class="job-tag">Natural Language Processing</span>
+                    </div>
+
+                    <div class="job-actions">
+                        <button class="btn btn-primary">Apply Now</button>
+                        <button class="btn btn-ghost">Save for Later</button>
+                    </div>
+                </div>
+
+                <!-- Job Card 2 -->
+                <div class="card job-card">
+                    <div class="job-header">
+                        <div>
+                            <h2 class="job-title">Associate Professor - Data Science</h2>
+                            <p class="job-institution">MIT</p>
+                            <p class="job-location">
+                                <i>📍</i> Cambridge, Massachusetts
+                            </p>
+                        </div>
+                        <div style="display: flex; gap: 8px; align-items: center;">
+                            <div class="job-match">
+                                <i>✓</i> 87% Match
+                            </div>
+                            <div class="difficulty-badge" data-difficulty="7">
+                                <i class="fas fa-star"></i> 7/10
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="job-details">
+                        <div class="job-detail">
+                            <i>💰</i> $110,000 - $140,000
+                        </div>
+                        <div class="job-detail">
+                            <i>⏱️</i> Full-time
+                        </div>
+                        <div class="job-detail">
+                            <i>🎓</i> PhD Required
+                        </div>
+                        <div class="job-detail">
+                            <i>📅</i> Posted 5 days ago
+                        </div>
+                    </div>
+
+                    <p class="job-description">
+                        The MIT Data Science program seeks an associate professor with expertise in statistical
+                        learning, big data analytics, and computational statistics. The successful candidate will
+                        contribute to both undergraduate and graduate teaching while developing an innovative research
+                        program.
+                    </p>
+
+                    <div class="job-tags">
+                        <span class="job-tag">Data Science</span>
+                        <span class="job-tag">Statistical Learning</span>
+                        <span class="job-tag">Big Data</span>
+                        <span class="job-tag">Computational Statistics</span>
+                    </div>
+
+                    <div class="job-actions">
+                        <button class="btn btn-primary">Apply Now</button>
+                        <button class="btn btn-ghost">Save for Later</button>
+                    </div>
+                </div>
+
+                <!-- Job Card 3 -->
+                <div class="card job-card">
+                    <div class="job-header">
+                        <div>
+                            <h2 class="job-title">Lecturer - Machine Learning</h2>
+                            <p class="job-institution">University of California, Berkeley</p>
+                            <p class="job-location">
+                                <i>📍</i> Berkeley, California
+                            </p>
+                        </div>
+                        <div style="display: flex; gap: 8px; align-items: center;">
+                            <div class="job-match">
+                                <i>✓</i> 82% Match
+                            </div>
+                            <div class="difficulty-badge" data-difficulty="6">
+                                <i class="fas fa-star"></i> 6/10
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="job-details">
+                        <div class="job-detail">
+                            <i>💰</i> $85,000 - $105,000
+                        </div>
+                        <div class="job-detail">
+                            <i>⏱️</i> Full-time
+                        </div>
+                        <div class="job-detail">
+                            <i>🎓</i> PhD Preferred
+                        </div>
+                        <div class="job-detail">
+                            <i>📅</i> Posted 1 week ago
+                        </div>
+                    </div>
+
+                    <p class="job-description">
+                        The Department of Electrical Engineering and Computer Sciences at UC Berkeley invites
+                        applications for a lecturer position in Machine Learning. Responsibilities include teaching
+                        undergraduate and graduate courses, curriculum development, and student advising.
+                    </p>
+
+                    <div class="job-tags">
+                        <span class="job-tag">Machine Learning</span>
+                        <span class="job-tag">Neural Networks</span>
+                        <span class="job-tag">Computer Science</span>
+                    </div>
+
+                    <div class="job-actions">
+                        <button class="btn btn-primary">Apply Now</button>
+                        <button class="btn btn-ghost">Save for Later</button>
+                    </div>
+                </div>
+
+                <!-- Job Card 4 -->
+                <div class="card job-card">
+                    <div class="job-header">
+                        <div>
+                            <h2 class="job-title">Research Professor - AI Ethics</h2>
+                            <p class="job-institution">Carnegie Mellon University</p>
+                            <p class="job-location">
+                                <i>📍</i> Pittsburgh, Pennsylvania
+                            </p>
+                        </div>
+                        <div style="display: flex; gap: 8px; align-items: center;">
+                            <div class="job-match">
+                                <i>✓</i> 76% Match
+                            </div>
+                            <div class="difficulty-badge" data-difficulty="5">
+                                <i class="fas fa-star"></i> 5/10
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="job-details">
+                        <div class="job-detail">
+                            <i>💰</i> $90,000 - $115,000
+                        </div>
+                        <div class="job-detail">
+                            <i>⏱️</i> Full-time
+                        </div>
+                        <div class="job-detail">
+                            <i>🎓</i> PhD Required
+                        </div>
+                        <div class="job-detail">
+                            <i>📅</i> Posted 3 days ago
+                        </div>
+                    </div>
+
+                    <p class="job-description">
+                        The School of Computer Science at Carnegie Mellon University seeks a research professor focused
+                        on AI Ethics, Fairness, and Transparency. This position involves interdisciplinary collaboration
+                        with law, philosophy, and public policy departments.
+                    </p>
+
+                    <div class="job-tags">
+                        <span class="job-tag">AI Ethics</span>
+                        <span class="job-tag">Fairness</span>
+                        <span class="job-tag">Transparency</span>
+                        <span class="job-tag">Interdisciplinary</span>
+                    </div>
+
+                    <div class="job-actions">
+                        <button class="btn btn-primary">Apply Now</button>
+                        <button class="btn btn-ghost">Save for Later</button>
+                    </div>
+                </div>
+            </section>
+        </div>
+        
+        <!-- Applications Section -->
+        <div class="page-content" id="applications-section" style="display: none;">
+            <div class="page-header">
+                <h1>My Applications</h1>
+                <p>Track your job applications and saved positions.</p>
+                
+                <div class="stats">
+                    <div class="stat">
+                        <div class="stat-value" id="savedJobs">0</div>
+                        <div class="stat-label">Saved Jobs</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-value" id="appliedJobsCount">0</div>
+                        <div class="stat-label">Applied</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-value" id="pendingApplications">0</div>
+                        <div class="stat-label">Pending</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="dash">
+                <aside class="sidebar">
+                    <div class="card side-card">
+                        <h3>Application Filters</h3>
+                        
+                        <div class="filter-section">
+                            <h4>Status</h4>
+                            <div class="filter-options">
+                                <label class="filter-option">
+                                    <input type="checkbox" checked data-app-filter="saved">
+                                    <span>Saved Jobs</span>
+                                </label>
+                                <label class="filter-option">
+                                    <input type="checkbox" checked data-app-filter="applied">
+                                    <span>Applied</span>
+                                </label>
+                                <label class="filter-option">
+                                    <input type="checkbox" checked data-app-filter="pending">
+                                    <span>Pending</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </aside>
+                
+                <section class="job-listings">
+                    <div id="savedJobsList">
+                        <!-- Saved jobs will be displayed here -->
+                    </div>
+                    
+                    <div id="noSavedJobs" style="text-align: center; padding: 60px 20px; color: var(--text-light); display: none;">
+                        <div style="font-size: 48px; margin-bottom: 16px; opacity: 0.5;">📋</div>
+                        <h3>No Saved Jobs</h3>
+                        <p>Jobs you save for later will appear here. Go back to Job Opportunities to save some positions!</p>
+                        <button class="btn btn-primary" onclick="switchToJobsSection()" style="margin-top: 16px;">Browse Jobs</button>
+                    </div>
+                </section>
+            </div>
+        </div>
+        
+        <!-- Messages Section -->
+        <div class="page-content" id="messages-section" style="display: none;">
+            <div class="page-header">
+                <h1>Messages</h1>
+                <p>Communicate with institutions about job opportunities and applications.</p>
+                
+                <div class="stats">
+                    <div class="stat">
+                        <div class="stat-value" id="unreadMessages">0</div>
+                        <div class="stat-label">Unread Messages</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-value" id="totalConversations">0</div>
+                        <div class="stat-label">Conversations</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-value" id="institutionContacts">0</div>
+                        <div class="stat-label">Institution Contacts</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="dash">
+                <aside class="sidebar">
+                    <div class="card side-card">
+                        <h3>Conversations</h3>
+                        <div id="conversationsList">
+                            <!-- Conversations will be loaded here -->
+                        </div>
+                        
+                        <div id="noConversations" style="text-align: center; padding: 20px; color: var(--text-light); display: none;">
+                            <div style="font-size: 32px; margin-bottom: 8px; opacity: 0.5;">💬</div>
+                            <p>No conversations yet</p>
+                        </div>
+                    </div>
+                    
+                    <div class="card side-card" style="margin-top: 20px;">
+                        <h3>Quick Actions</h3>
+                        <button class="btn btn-primary" onclick="startNewConversation()" style="width: 100%; margin-bottom: 10px;">
+                            <i class="fas fa-plus"></i> New Message
+                        </button>
+                        <button class="btn btn-outline" onclick="markAllAsRead()" style="width: 100%;">
+                            <i class="fas fa-check-double"></i> Mark All Read
+                        </button>
+                    </div>
+                </aside>
+                
+                <section class="job-listings">
+                    <div class="card" id="messageArea">
+                        <div class="card-header" id="messageHeader">
+                            <h3 id="conversationTitle">Select a conversation</h3>
+                            <div id="conversationActions" style="display: none;">
+                                <button class="btn btn-ghost" onclick="refreshMessages()">
+                                    <i class="fas fa-sync-alt"></i>
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div class="card-body" id="messagesContainer" style="height: 400px; overflow-y: auto; padding: 20px;">
+                            <div id="welcomeMessage" style="text-align: center; padding: 60px 20px; color: var(--text-light);">
+                                <div style="font-size: 48px; margin-bottom: 16px; opacity: 0.5;">💬</div>
+                                <h3>Welcome to Messages</h3>
+                                <p>Select a conversation from the sidebar or start a new one to begin communicating with institutions.</p>
+                            </div>
+                            
+                            <div id="messagesList" style="display: none;">
+                                <!-- Messages will be loaded here -->
+                            </div>
+                        </div>
+                        
+                        <div class="card-footer" id="messageInput" style="display: none;">
+                            <div style="display: flex; gap: 12px; align-items: flex-end;">
+                                <textarea id="newMessageText" placeholder="Type your message here..." 
+                                    style="flex: 1; min-height: 60px; padding: 12px; border: 1px solid var(--border); border-radius: 8px; resize: vertical; font-family: inherit;"></textarea>
+                                <button class="btn btn-primary" onclick="sendMessage()" style="height: fit-content;">
+                                    <i class="fas fa-paper-plane"></i> Send
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+        
+        <!-- Settings Section -->
+        <div class="page-content" id="settings-section" style="display: none;">
+            <div class="page-header">
+                <h1>Settings</h1>
+                <p>Manage your account preferences and profile information.</p>
+            </div>
+            
+            <div class="dash">
+                <aside class="sidebar">
+                    <div class="card side-card">
+                        <h3>Settings Menu</h3>
+                        <div class="settings-menu">
+                            <a href="#" class="settings-link active" data-settings="profile">Profile & Details</a>
+                            <a href="#" class="settings-link" data-settings="notifications">Notifications</a>
+                            <a href="#" class="settings-link" data-settings="preferences">Preferences</a>
+                            <a href="#" class="settings-link" data-settings="security">Security</a>
+                        </div>
+                    </div>
+                </aside>
+                
+                <section class="job-listings">
+                    <!-- Profile & Update Details -->
+                    <div class="settings-content" id="profile-settings">
+                        <div class="card">
+                            <div class="card-header">
+                                <h3>Profile & Personal Details</h3>
+                                <p>Update your personal information and qualifications</p>
+                            </div>
+                            <div class="card-body">
+                                <form id="profileUpdateForm">
+                                    <div class="form-row">
+                                        <div class="form-group">
+                                            <label for="updateName">Full Name</label>
+                                            <input type="text" id="updateName" class="form-control" required>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="updateEmail">Email Address</label>
+                                            <input type="email" id="updateEmail" class="form-control" required>
+                                        </div>
+                                    </div>
+                                    <div class="form-row">
+                                        <div class="form-group">
+                                            <label for="updatePhone">Phone Number</label>
+                                            <input type="tel" id="updatePhone" class="form-control">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="updateQualification">Highest Qualification</label>
+                                            <select id="updateQualification" class="form-control">
+                                                <option value="PhD">PhD</option>
+                                                <option value="Masters">Masters</option>
+                                                <option value="Bachelors">Bachelors</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="form-row">
+                                        <div class="form-group">
+                                            <label for="updateSpecialization">Specialization/Subject</label>
+                                            <input type="text" id="updateSpecialization" class="form-control" required>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="updateTeachingExp">Teaching Experience (Years)</label>
+                                            <input type="number" id="updateTeachingExp" class="form-control" min="0">
+                                        </div>
+                                    </div>
+                                    <div class="form-row">
+                                        <div class="form-group">
+                                            <label for="updateResearchExp">Research Experience (Years)</label>
+                                            <input type="number" id="updateResearchExp" class="form-control" min="0">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="updateCurrentSalary">Current Salary</label>
+                                            <input type="text" id="updateCurrentSalary" class="form-control" placeholder="e.g. 8 LPA">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="updateResearchInterests">Research Interests</label>
+                                        <textarea id="updateResearchInterests" class="form-control" rows="3" placeholder="Separate multiple interests with commas"></textarea>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="updateCV">Update CV/Resume (Word Document only)</label>
+                                        <input type="file" id="updateCV" class="form-control" accept=".doc,.docx">
+                                        <small class="form-text">Only Word documents (.doc, .docx) are accepted.</small>
+                                    </div>
+                                    <div class="form-actions">
+                                        <button type="submit" class="btn btn-primary">
+                                            <i class="fas fa-save"></i> Update Profile
+                                        </button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Notification Preferences -->
+                    <div class="settings-content" id="notifications-settings" style="display: none;">
+                        <div class="card">
+                            <div class="card-header">
+                                <h3>Notification Preferences</h3>
+                                <p>Configure how you want to receive notifications</p>
+                            </div>
+                            <div class="card-body">
+                                <form id="notificationPreferencesForm">
+                                    <div class="notification-group">
+                                        <h4>Email Notifications</h4>
+                                        <div class="checkbox-group">
+                                            <label class="checkbox-label">
+                                                <input type="checkbox" id="emailJobAlerts" checked>
+                                                <span class="checkmark"></span>
+                                                New job opportunities matching my profile
+                                            </label>
+                                            <label class="checkbox-label">
+                                                <input type="checkbox" id="emailApplicationUpdates" checked>
+                                                <span class="checkmark"></span>
+                                                Application status updates
+                                            </label>
+                                            <label class="checkbox-label">
+                                                <input type="checkbox" id="emailTestReminders" checked>
+                                                <span class="checkmark"></span>
+                                                Test and interview reminders
+                                            </label>
+                                            <label class="checkbox-label">
+                                                <input type="checkbox" id="emailMessages">
+                                                <span class="checkmark"></span>
+                                                New messages from institutions
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="notification-group">
+                                        <h4>Dashboard Notifications</h4>
+                                        <div class="checkbox-group">
+                                            <label class="checkbox-label">
+                                                <input type="checkbox" id="dashboardAlerts" checked>
+                                                <span class="checkmark"></span>
+                                                Show dashboard alerts and updates
+                                            </label>
+                                            <label class="checkbox-label">
+                                                <input type="checkbox" id="dashboardReminders" checked>
+                                                <span class="checkmark"></span>
+                                                Show application deadlines
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="form-actions">
+                                        <button type="submit" class="btn btn-primary">
+                                            <i class="fas fa-bell"></i> Update Preferences
+                                        </button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Other Settings Placeholders -->
+                    <div class="settings-content" id="preferences-settings" style="display: none;">
+                        <div class="card">
+                            <div class="card-header">
+                                <h3>General Preferences</h3>
+                                <p>Customize your experience</p>
+                            </div>
+                            <div class="card-body">
+                                <p style="text-align: center; color: var(--text-light); padding: 40px;">General preferences settings coming soon...</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="settings-content" id="security-settings" style="display: none;">
+                        <div class="card">
+                            <div class="card-header">
+                                <h3>Security Settings</h3>
+                                <p>Manage your account security</p>
+                            </div>
+                            <div class="card-body">
+                                <p style="text-align: center; color: var(--text-light); padding: 40px;">Security settings coming soon...</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+
+    <!-- Test Modal -->
+    <div class="test-modal" id="testModal">
+        <div class="test-modal-content">
+            <div class="test-modal-header">
+                <h3 class="test-modal-title" id="testModalTitle">Mock Test - Job Position</h3>
+                <button class="test-modal-close" id="closeTestModal">&times;</button>
+            </div>
+            <div class="test-modal-body">
+                <div class="test-info">
+                    <h4>Test Instructions</h4>
+                    <p>Please answer all questions in the text boxes provided. You have 30 minutes to complete this test. Your answers will be reviewed by the institution.</p>
+                </div>
+                <div id="testQuestions">
+                    <!-- Questions will be loaded here dynamically -->
+                </div>
+            </div>
+            <div class="test-actions">
+                <div class="test-timer" id="testTimer">Time Remaining: 30:00</div>
+                <div class="test-buttons">
+                    <button class="btn btn-secondary" id="cancelTest">Cancel Test</button>
+                    <button class="btn btn-primary" id="submitTest">Submit Test</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Confirmation Modal -->
+    <div class="confirmation-modal" id="confirmationModal">
+        <div class="confirmation-content">
+            <h3>Start Mock Test?</h3>
+            <p>This position requires a mock test. Would you like to start the test now? Once started, you'll have 30 minutes to complete it.</p>
+            <div class="confirmation-buttons">
+                <button class="btn btn-secondary" id="cancelApplication">Cancel</button>
+                <button class="btn btn-primary" id="startTest">Start Test</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // User session management
+        const USERS_KEY = 'smarthiring_users';
+        const SESSION_KEY = 'smarthiring_current_user_email';
+        
+        let currentUser = null;
+
+        // Utility functions
+        function getUsers() {
+            try {
+                return JSON.parse(localStorage.getItem(USERS_KEY)) || [];
+            } catch (e) { return []; }
+        }
+
+        function findUserByEmail(email) {
+            return getUsers().find(u => (u.email || '').toLowerCase() === (email || '').toLowerCase());
+        }
+
+        function getSession() { 
+            return localStorage.getItem(SESSION_KEY); 
+        }
+
+        function clearSession() { 
+            localStorage.removeItem(SESSION_KEY); 
+        }
+
+        function loadUserSession() {
+            const email = getSession();
+            if (!email) {
+                // No session found, redirect to login
+                window.location.href = 'index.html';
+                return false;
+            }
+            
+            const user = findUserByEmail(email);
+            if (!user) {
+                // User not found, clear session and redirect
+                clearSession();
+                window.location.href = 'index.html';
+                return false;
+            }
+            
+            if (user.role !== 'faculty') {
+                // Wrong user type, redirect to appropriate page
+                if (user.role === 'institution') {
+                    window.location.href = 'institution.html';
+                } else {
+                    window.location.href = 'index.html';
+                }
+                return false;
+            }
+            
+            currentUser = user;
+            return true;
+        }
+
+        function updateProfileSummary() {
+            if (!currentUser) return;
+            
+            const summaryElement = document.getElementById('summary');
+            const { name, profile = {} } = currentUser;
+            const { specialization, qualification, researchInterests = [] } = profile;
+            
+            let summaryHTML = `<div><strong>${name || 'Faculty Member'}</strong></div>`;
+            
+            if (specialization) {
+                summaryHTML += `<div class="muted">${specialization}</div>`;
+            }
+            
+            if (qualification) {
+                summaryHTML += `<div class="muted">${qualification}</div>`;
+            }
+            
+            // Add research interests as chips
+            researchInterests.slice(0, 3).forEach(interest => {
+                if (interest.trim()) {
+                    summaryHTML += `<div class="summary-chip">${interest.trim()}</div>`;
+                }
+            });
+            
+            summaryElement.innerHTML = summaryHTML;
+        }
+
+        function handleLogout() {
+            clearSession();
+            currentUser = null;
+            window.location.href = 'index.html';
+        }
+
+        // Sample job data with test information
+        const jobsData = {
+            'Assistant Professor - Computer Science': {
+                hasTest: true,
+                difficultyPoints: 8,
+                questions: [
+                    {
+                        id: 1,
+                        question: "What is the time complexity of Binary Search?",
+                        options: ["O(n)", "O(log n)", "O(n²)", "O(1)"],
+                        correctAnswer: "O(log n)"
+                    },
+                    {
+                        id: 2,
+                        question: "Which data structure uses LIFO (Last In First Out)?",
+                        options: ["Queue", "Stack", "Array", "Linked List"],
+                        correctAnswer: "Stack"
+                    },
+                    {
+                        id: 3,
+                        question: "What does OOP stand for?",
+                        options: ["Object Oriented Programming", "Objective Oriented Programming", "Open Oriented Programming", "Operator Oriented Programming"],
+                        correctAnswer: "Object Oriented Programming"
+                    },
+                    {
+                        id: 4,
+                        question: "Which SQL command is used to retrieve data from a database?",
+                        options: ["GET", "FETCH", "SELECT", "RETRIEVE"],
+                        correctAnswer: "SELECT"
+                    },
+                    {
+                        id: 5,
+                        question: "What is the main purpose of an index in a database?",
+                        options: ["To store data", "To speed up queries", "To create tables", "To delete records"],
+                        correctAnswer: "To speed up queries"
+                    }
+                ]
+            },
+            'Associate Professor - Data Science': {
+                hasTest: true,
+                difficultyPoints: 7,
+                questions: [
+                    {
+                        id: 1,
+                        question: "Which of the following is a supervised learning algorithm?",
+                        options: ["K-means", "Linear Regression", "DBSCAN", "PCA"],
+                        correctAnswer: "Linear Regression"
+                    },
+                    {
+                        id: 2,
+                        question: "What is overfitting in machine learning?",
+                        options: ["Model performs poorly on training data", "Model performs well on both training and test data", "Model performs well on training but poorly on test data", "Model doesn't learn anything"],
+                        correctAnswer: "Model performs well on training but poorly on test data"
+                    },
+                    {
+                        id: 3,
+                        question: "Which metric is commonly used for classification problems?",
+                        options: ["MSE", "R-squared", "Accuracy", "MAE"],
+                        correctAnswer: "Accuracy"
+                    },
+                    {
+                        id: 4,
+                        question: "What does pandas library in Python primarily handle?",
+                        options: ["Image processing", "Data manipulation and analysis", "Web scraping", "GUI development"],
+                        correctAnswer: "Data manipulation and analysis"
+                    }
+                ]
+            },
+            'Lecturer - Machine Learning': {
+                hasTest: true,
+                difficultyPoints: 6,
+                questions: [
+                    {
+                        id: 1,
+                        question: "What is a neuron in a neural network?",
+                        options: ["A biological cell", "A computational unit that processes inputs", "A type of algorithm", "A database"],
+                        correctAnswer: "A computational unit that processes inputs"
+                    },
+                    {
+                        id: 2,
+                        question: "Which activation function is commonly used in hidden layers?",
+                        options: ["Sigmoid", "ReLU", "Linear", "Step"],
+                        correctAnswer: "ReLU"
+                    },
+                    {
+                        id: 3,
+                        question: "What is gradient descent used for?",
+                        options: ["Data preprocessing", "Optimizing model parameters", "Feature selection", "Data visualization"],
+                        correctAnswer: "Optimizing model parameters"
+                    }
+                ]
+            },
+            'Research Professor - AI Ethics': {
+                hasTest: false,
+                difficultyPoints: 5,
+                questions: []
+            }
+        };
+
+        // Test system variables
+        let currentTest = null;
+        let testTimer = null;
+        let testTimeRemaining = 30 * 60; // 30 minutes in seconds
+        let currentJobTitle = '';
+
+        // Test system functions
+        function showConfirmationModal(jobTitle) {
+            try {
+                currentJobTitle = jobTitle;
+                const jobData = jobsData[jobTitle];
+                
+                if (!jobData) {
+                    console.warn('Job data not found for:', jobTitle);
+                    alert('Application submitted successfully! The institution will review your profile.');
+                    return;
+                }
+                
+                if (!jobData.hasTest) {
+                    // No test required, proceed with normal application
+                    alert('Application submitted successfully! The institution will review your profile.');
+                    return;
+                }
+                
+                const modal = document.getElementById('confirmationModal');
+                if (modal) {
+                    modal.style.display = 'flex';
+                } else {
+                    console.error('Confirmation modal not found');
+                    alert('Application submitted successfully! The institution will review your profile.');
+                }
+            } catch (error) {
+                console.error('Error showing confirmation modal:', error);
+                alert('Application submitted successfully! The institution will review your profile.');
+            }
+        }
+
+        function hideConfirmationModal() {
+            try {
+                const modal = document.getElementById('confirmationModal');
+                if (modal) {
+                    modal.style.display = 'none';
+                } else {
+                    console.error('Confirmation modal not found for hiding');
+                }
+            } catch (error) {
+                console.error('Error hiding confirmation modal:', error);
+            }
+        }
+
+        function startTest() {
+            try {
+                hideConfirmationModal();
+                const jobData = jobsData[currentJobTitle];
+                
+                if (!jobData || !jobData.hasTest) {
+                    console.warn('No test data available for:', currentJobTitle);
+                    return;
+                }
+                
+                currentTest = {
+                    jobTitle: currentJobTitle,
+                    questions: jobData.questions || [],
+                    answers: {},
+                    startTime: new Date(),
+                    timeRemaining: 30 * 60 // 30 minutes
+                };
+                
+                testTimeRemaining = 30 * 60;
+                
+                const testModal = document.getElementById('testModal');
+                const testModalTitle = document.getElementById('testModalTitle');
+                
+                if (testModalTitle) {
+                    testModalTitle.textContent = `Mock Test - ${currentJobTitle}`;
+                }
+                
+                if (testModal) {
+                    testModal.style.display = 'block';
+                } else {
+                    console.error('Test modal not found');
+                    alert('Unable to start test. Please try again.');
+                    return;
+                }
+                
+                loadTestQuestions(jobData.questions || []);
+                startTestTimer();
+            } catch (error) {
+                console.error('Error starting test:', error);
+                alert('Unable to start test. Please try again.');
+            }
+        }
+
+        function loadTestQuestions(questions) {
+            try {
+                const questionsContainer = document.getElementById('testQuestions');
+                if (!questionsContainer) {
+                    console.error('Test questions container not found');
+                    return;
+                }
+                
+                questionsContainer.innerHTML = '';
+                
+                if (!questions || questions.length === 0) {
+                    questionsContainer.innerHTML = '<p style="text-align: center; color: var(--text-light); padding: 20px;">No questions available for this test.</p>';
+                    return;
+                }
+            
+                currentTest.questions.forEach((question, index) => {
+                    const questionDiv = document.createElement('div');
+                    questionDiv.className = 'test-question';
+                    
+                    // Create options HTML
+                    let optionsHTML = '';
+                    if (question.options && question.options.length > 0) {
+                        optionsHTML = `
+                            <div class="question-options" style="display: grid; gap: 12px; margin-top: 16px;">
+                                ${question.options.map((option, optIdx) => `
+                                    <label class="option-label" style="display: flex; align-items: center; gap: 12px; padding: 12px; border: 2px solid var(--border); border-radius: 8px; cursor: pointer; transition: all 0.2s;">
+                                        <input type="radio" 
+                                            name="question_${question.id}" 
+                                            value="${option}"
+                                            data-question-id="${question.id}"
+                                            style="accent-color: var(--primary); width: 18px; height: 18px;">
+                                        <span style="flex: 1; font-size: 15px;">${option}</span>
+                                    </label>
+                                `).join('')}
+                            </div>
+                        `;
+                    }
+                    
+                    questionDiv.innerHTML = `
+                        <div class="question-number">Question ${index + 1}</div>
+                        <div class="question-text">${question.question || question.text}</div>
+                        ${optionsHTML}
+                    `;
+                    questionsContainer.appendChild(questionDiv);
+                });
+                
+                // Add event listeners for radio button selections
+                document.querySelectorAll('input[type="radio"]').forEach(radio => {
+                    radio.addEventListener('change', function() {
+                        const questionId = this.getAttribute('data-question-id');
+                        currentTest.answers[questionId] = this.value;
+                        
+                        // Highlight selected option
+                        const allLabels = this.closest('.question-options').querySelectorAll('.option-label');
+                        allLabels.forEach(label => {
+                            label.style.borderColor = 'var(--border)';
+                            label.style.background = 'transparent';
+                        });
+                        this.closest('.option-label').style.borderColor = 'var(--primary)';
+                        this.closest('.option-label').style.background = 'var(--primary-50)';
+                    });
+                });
+            } catch (error) {
+                console.error('Error loading test questions:', error);
+                const questionsContainer = document.getElementById('testQuestions');
+                if (questionsContainer) {
+                    questionsContainer.innerHTML = '<p style="text-align: center; color: var(--danger); padding: 20px;">Error loading test questions. Please try again.</p>';
+                }
+            }
+        }
+
+        function startTestTimer() {
+            testTimeRemaining = 30 * 60; // Reset to 30 minutes
+            updateTimerDisplay();
+            
+            testTimer = setInterval(() => {
+                testTimeRemaining--;
+                updateTimerDisplay();
+                
+                if (testTimeRemaining <= 0) {
+                    clearInterval(testTimer);
+                    submitTest(true); // Auto-submit when time is up
+                }
+            }, 1000);
+        }
+
+        function updateTimerDisplay() {
+            const minutes = Math.floor(testTimeRemaining / 60);
+            const seconds = testTimeRemaining % 60;
+            const display = `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+            document.getElementById('testTimer').textContent = `Time Remaining: ${display}`;
+            
+            // Change color when time is running low
+            const timerElement = document.getElementById('testTimer');
+            if (testTimeRemaining <= 300) { // 5 minutes
+                timerElement.style.color = 'var(--danger)';
+            } else if (testTimeRemaining <= 600) { // 10 minutes
+                timerElement.style.color = 'var(--warning)';
+            }
+        }
+
+        function submitTest(autoSubmit = false) {
+            if (!currentTest) return;
+            
+            // Check if all questions are answered
+            const unansweredQuestions = currentTest.questions.filter(q => 
+                !currentTest.answers[q.id]
+            );
+            
+            if (!autoSubmit && unansweredQuestions.length > 0) {
+                const proceed = confirm(`You have ${unansweredQuestions.length} unanswered questions. Do you want to submit anyway?`);
+                if (!proceed) return;
+            }
+            
+            // Stop timer
+            if (testTimer) {
+                clearInterval(testTimer);
+                testTimer = null;
+            }
+            
+            // Calculate completion time
+            const endTime = new Date();
+            const totalSeconds = Math.round((endTime - currentTest.startTime) / 1000);
+            const minutes = Math.floor(totalSeconds / 60);
+            const seconds = totalSeconds % 60;
+            const timeTaken = `${minutes}m ${seconds}s`;
+            
+            // Calculate score by comparing with correct answers
+            let correctCount = 0;
+            const answerDetails = [];
+            
+            currentTest.questions.forEach(question => {
+                const userAnswer = currentTest.answers[question.id] || null;
+                const isCorrect = userAnswer === question.correctAnswer;
+                if (isCorrect) correctCount++;
+                
+                answerDetails.push({
+                    question: question.question,
+                    selected: userAnswer,
+                    correctAnswer: question.correctAnswer,
+                    correct: isCorrect
+                });
+            });
+            
+            const score = Math.round((correctCount / currentTest.questions.length) * 100);
+            
+            // Store test results with score
+            const testResult = {
+                id: 'test_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9),
+                jobTitle: currentTest.jobTitle,
+                institutionName: 'IIT Delhi', // You can make this dynamic based on job data
+                candidateName: currentUser.name,
+                candidateEmail: currentUser.email,
+                candidatePhone: currentUser.phone || currentUser.profile?.phone || 'Not provided',
+                answers: answerDetails,
+                score: score,
+                correctAnswers: correctCount,
+                totalQuestions: currentTest.questions.length,
+                timeTaken: timeTaken,
+                submittedAt: endTime.toISOString(),
+                autoSubmitted: autoSubmit,
+                feedback: '' // Institution will add feedback later
+            };
+            
+            // Save to localStorage (in real app, this would be sent to server)
+            const existingResults = JSON.parse(localStorage.getItem('testResults') || '[]');
+            existingResults.push(testResult);
+            localStorage.setItem('testResults', JSON.stringify(existingResults));
+            
+            // Store notification for institution
+            const notifications = JSON.parse(localStorage.getItem('institutionNotifications') || '[]');
+            notifications.push({
+                id: Date.now(),
+                type: 'test_completed',
+                message: `${currentUser.name} has completed the mock test for ${currentTest.jobTitle} (Score: ${score}%)`,
+                candidateName: currentUser.name,
+                candidateEmail: currentUser.email,
+                jobTitle: currentTest.jobTitle,
+                score: score,
+                timestamp: new Date().toISOString(),
+                read: false
+            });
+            localStorage.setItem('institutionNotifications', JSON.stringify(notifications));
+            
+            // Close modal
+            closeTestModal();
+            
+            // Show result to candidate
+            showTestResult(testResult);
+            
+            // Reset test state
+            currentTest = null;
+        }
+        
+        function showTestResult(result) {
+            const resultHTML = `
+                <div style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); z-index: 2000; display: flex; align-items: center; justify-content: center; padding: 20px;">
+                    <div style="background: white; border-radius: 16px; max-width: 600px; width: 100%; max-height: 90vh; overflow-y: auto; box-shadow: 0 20px 60px rgba(0,0,0,0.3);">
+                        <div style="padding: 32px; text-align: center; border-bottom: 2px solid var(--border);">
+                            <div style="width: 80px; height: 80px; margin: 0 auto 20px; border-radius: 50%; background: ${result.score >= 70 ? 'var(--success)' : result.score >= 50 ? 'var(--warning)' : 'var(--danger)'}; display: flex; align-items: center; justify-content: center; font-size: 36px; color: white; font-weight: 700;">
+                                ${result.score}%
+                            </div>
+                            <h2 style="margin: 0 0 12px 0; font-size: 28px; color: var(--text);">Test Submitted!</h2>
+                            <p style="margin: 0; color: var(--text-light); font-size: 16px;">Here are your results for ${result.jobTitle}</p>
+                        </div>
+                        
+                        <div style="padding: 32px;">
+                            <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; margin-bottom: 24px;">
+                                <div style="text-align: center; padding: 20px; background: var(--light); border-radius: 12px;">
+                                    <div style="font-size: 24px; font-weight: 700; color: var(--success); margin-bottom: 8px;">${result.correctAnswers}/${result.totalQuestions}</div>
+                                    <div style="font-size: 14px; color: var(--text-light);">Correct Answers</div>
+                                </div>
+                                <div style="text-align: center; padding: 20px; background: var(--light); border-radius: 12px;">
+                                    <div style="font-size: 24px; font-weight: 700; color: var(--primary); margin-bottom: 8px;">${result.timeTaken}</div>
+                                    <div style="font-size: 14px; color: var(--text-light);">Time Taken</div>
+                                </div>
+                            </div>
+                            
+                            <div style="background: ${result.score >= 70 ? 'rgba(16, 185, 129, 0.1)' : result.score >= 50 ? 'rgba(245, 158, 11, 0.1)' : 'rgba(239, 68, 68, 0.1)'}; border: 2px solid ${result.score >= 70 ? 'var(--success)' : result.score >= 50 ? 'var(--warning)' : 'var(--danger)'}; border-radius: 12px; padding: 20px; margin-bottom: 24px;">
+                                <h4 style="margin: 0 0 12px 0; color: var(--text); font-size: 16px;">Performance Rating</h4>
+                                <p style="margin: 0; font-size: 18px; font-weight: 600; color: ${result.score >= 70 ? 'var(--success)' : result.score >= 50 ? 'var(--warning)' : 'var(--danger)'};">
+                                    ${result.score >= 80 ? 'Excellent!' : result.score >= 70 ? 'Good Performance!' : result.score >= 50 ? 'Fair Performance' : 'Needs Improvement'}
+                                </p>
+                                <p style="margin: 8px 0 0 0; font-size: 14px; color: var(--text-light); line-height: 1.5;">
+                                    ${result.score >= 70 ? 'Great job! Your test results show strong understanding of the subject.' : result.score >= 50 ? 'You passed the test. Consider reviewing the topics to strengthen your knowledge.' : 'Please review the topics and try to improve your understanding.'}
+                                </p>
+                            </div>
+                            
+                            <div style="background: var(--primary-50); border-left: 4px solid var(--primary); padding: 16px; border-radius: 8px; margin-bottom: 24px;">
+                                <p style="margin: 0; font-size: 14px; color: var(--text); line-height: 1.6;">
+                                    <strong>Next Steps:</strong> The institution has received your test results and will review your application. You'll be notified once they provide feedback or move forward with your application.
+                                </p>
+                            </div>
+                            
+                            <button onclick="closeTestResultModal()" style="width: 100%; padding: 14px; background: var(--primary); color: white; border: none; border-radius: 12px; font-weight: 600; font-size: 16px; cursor: pointer; transition: all 0.2s;">
+                                Close & Continue
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            `;
+            
+            const resultModal = document.createElement('div');
+            resultModal.id = 'testResultModal';
+            resultModal.innerHTML = resultHTML;
+            document.body.appendChild(resultModal);
+        }
+        
+        function closeTestResultModal() {
+            const modal = document.getElementById('testResultModal');
+            if (modal) {
+                modal.remove();
+            }
+        }
+
+        function closeTestModal() {
+            document.getElementById('testModal').classList.remove('active');
+            if (testTimer) {
+                clearInterval(testTimer);
+                testTimer = null;
+            }
+            currentTest = null;
+        }
+
+        function cancelTest() {
+            if (confirm('Are you sure you want to cancel the test? Your progress will be lost.')) {
+                closeTestModal();
+            }
+        }
+
+        // Saved jobs management
+        function getSavedJobs() {
+            const saved = localStorage.getItem('savedJobs_' + (currentUser?.email || 'guest'));
+            return saved ? JSON.parse(saved) : [];
+        }
+        
+        function saveJobToStorage(jobData) {
+            try {
+                const savedJobs = getSavedJobs();
+                const existingIndex = savedJobs.findIndex(job => 
+                    job.title === jobData.title && job.institution === jobData.institution
+                );
+                
+                if (existingIndex === -1) {
+                    const jobToSave = {
+                        ...jobData,
+                        savedAt: new Date().toISOString(),
+                        status: 'saved'
+                    };
+                    
+                    savedJobs.push(jobToSave);
+                    const storageKey = 'savedJobs_' + (currentUser?.email || 'guest');
+                    localStorage.setItem(storageKey, JSON.stringify(savedJobs));
+                    
+                    console.log('Job saved to localStorage:', storageKey, jobToSave);
+                    return true;
+                } else {
+                    console.log('Job already exists in saved jobs');
+                    return false;
+                }
+            } catch (error) {
+                console.error('Error saving job to storage:', error);
+                return false;
+            }
+        }
+        
+        function removeSavedJob(jobTitle) {
+            const savedJobs = getSavedJobs();
+            const filteredJobs = savedJobs.filter(job => job.title !== jobTitle);
+            localStorage.setItem('savedJobs_' + (currentUser?.email || 'guest'), JSON.stringify(filteredJobs));
+            displaySavedJobs();
+            updateApplicationStats();
+        }
+        
+        function displaySavedJobs() {
+            const savedJobs = getSavedJobs();
+            const savedJobsList = document.getElementById('savedJobsList');
+            const noSavedJobs = document.getElementById('noSavedJobs');
+            
+            console.log('Displaying saved jobs:', savedJobs.length, savedJobs);
+            
+            if (!savedJobsList) {
+                console.error('savedJobsList element not found');
+                return;
+            }
+            
+            if (savedJobs.length === 0) {
+                savedJobsList.innerHTML = '';
+                if (noSavedJobs) {
+                    noSavedJobs.style.display = 'block';
+                }
+                return;
+            }
+            
+            if (noSavedJobs) {
+                noSavedJobs.style.display = 'none';
+            }
+            
+            savedJobsList.innerHTML = savedJobs.map((job, index) => {
+                const savedDate = new Date(job.savedAt).toLocaleDateString();
+                const jobTags = job.tags && Array.isArray(job.tags) ? job.tags : [];
+                
+                return `
+                    <div class="card job-card" data-job-id="${job.id || index}">
+                        <div class="job-header">
+                            <div>
+                                <h2 class="job-title">${job.title || 'Untitled Position'}</h2>
+                                <p class="job-institution">${job.institution || 'Unknown Institution'}</p>
+                                <p class="job-location">
+                                    <i>📍</i> ${job.location || 'Location not specified'}
+                                </p>
+                            </div>
+                            <div style="display: flex; gap: 8px; align-items: center;">
+                                <div class="job-match" style="background: var(--primary);">
+                                    <i>💾</i> Saved
+                                </div>
+                                <div class="difficulty-badge" data-difficulty="${job.difficulty || 5}">
+                                    <i class="fas fa-star"></i> ${job.difficulty || 5}/10
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="job-details">
+                            <div class="job-detail">
+                                <i>💰</i> ${job.salary || 'Salary not specified'}
+                            </div>
+                            <div class="job-detail">
+                                <i>⏱️</i> ${job.type || 'Full-time'}
+                            </div>
+                            <div class="job-detail">
+                                <i>📅</i> Saved on ${savedDate}
+                            </div>
+                        </div>
+                        
+                        <div class="job-description">
+                            <p>${job.description || 'No description available'}</p>
+                        </div>
+                        
+                        <div class="job-tags">
+                            ${jobTags.map(tag => `<span class="job-tag">${tag}</span>`).join('')}
+                        </div>
+                        
+                        <div class="job-actions">
+                            <button class="btn btn-primary" onclick="applyToSavedJob('${job.title.replace(/'/g, "\\'")}')">Apply Now</button>
+                            <button class="btn btn-ghost" onclick="removeSavedJob('${job.title.replace(/'/g, "\\'")}')">Remove</button>
+                        </div>
+                    </div>
+                `;
+            }).join('');
+            
+            console.log('Saved jobs displayed successfully');
+        }
+        
+        function updateApplicationStats() {
+            const savedJobs = getSavedJobs();
+            document.getElementById('savedJobs').textContent = savedJobs.length;
+            
+            // Update applied jobs count from test results
+            const testResults = JSON.parse(localStorage.getItem('testResults') || '[]');
+            const userTestResults = testResults.filter(result => result.candidateEmail === (currentUser?.email || ''));
+            document.getElementById('appliedJobsCount').textContent = userTestResults.length;
+            document.getElementById('pendingApplications').textContent = userTestResults.filter(result => !result.reviewed).length;
+        }
+        
+        function applyToSavedJob(jobTitle) {
+            // Find the job in saved jobs and trigger apply process
+            const savedJobs = getSavedJobs();
+            const job = savedJobs.find(j => j.title === jobTitle);
+            if (job) {
+                showConfirmationModal(jobTitle);
+            }
+        }
+        
+        // Messages system
+        let currentConversation = null;
+        
+        function getMessages() {
+            const messages = localStorage.getItem('facultyMessages_' + (currentUser?.email || 'guest'));
+            return messages ? JSON.parse(messages) : [];
+        }
+        
+        function saveMessage(message) {
+            const messages = getMessages();
+            messages.push({
+                ...message,
+                id: Date.now() + '_' + Math.random().toString(36).substr(2, 9),
+                timestamp: new Date().toISOString(),
+                read: false
+            });
+            localStorage.setItem('facultyMessages_' + (currentUser?.email || 'guest'), JSON.stringify(messages));
+            return messages;
+        }
+        
+        function getConversations() {
+            const messages = getMessages();
+            const conversations = {};
+            
+            messages.forEach(message => {
+                const key = message.institutionName || 'Unknown Institution';
+                if (!conversations[key]) {
+                    conversations[key] = {
+                        institutionName: key,
+                        messages: [],
+                        lastMessage: null,
+                        unreadCount: 0
+                    };
+                }
+                conversations[key].messages.push(message);
+                if (!message.read && message.sender !== 'faculty') {
+                    conversations[key].unreadCount++;
+                }
+            });
+            
+            // Set last message for each conversation
+            Object.values(conversations).forEach(conv => {
+                conv.messages.sort((a, b) => new Date(a.timestamp) - new Date(b.timestamp));
+                conv.lastMessage = conv.messages[conv.messages.length - 1];
+            });
+            
+            return Object.values(conversations);
+        }
+        
+        function displayConversations() {
+            const conversations = getConversations();
+            const conversationsList = document.getElementById('conversationsList');
+            const noConversations = document.getElementById('noConversations');
+            
+            if (conversations.length === 0) {
+                conversationsList.innerHTML = '';
+                noConversations.style.display = 'block';
+                return;
+            }
+            
+            noConversations.style.display = 'none';
+            
+            conversationsList.innerHTML = conversations.map(conv => {
+                const lastMessageTime = conv.lastMessage ? 
+                    new Date(conv.lastMessage.timestamp).toLocaleDateString() : '';
+                const unreadBadge = conv.unreadCount > 0 ? 
+                    `<span class="unread-badge">${conv.unreadCount}</span>` : '';
+                
+                return `
+                    <div class="conversation-item" onclick="selectConversation('${conv.institutionName}')" 
+                         style="padding: 12px; border: 1px solid var(--border); border-radius: 8px; margin-bottom: 8px; cursor: pointer; transition: var(--transition);">
+                        <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+                            <div style="flex: 1;">
+                                <h4 style="margin: 0 0 4px 0; font-size: 14px; font-weight: 600;">${conv.institutionName}</h4>
+                                <p style="margin: 0; font-size: 12px; color: var(--text-light); overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">
+                                    ${conv.lastMessage ? conv.lastMessage.content.substring(0, 50) + '...' : 'No messages'}
+                                </p>
+                                <small style="color: var(--text-light); font-size: 11px;">${lastMessageTime}</small>
+                            </div>
+                            ${unreadBadge}
+                        </div>
+                    </div>
+                `;
+            }).join('');
+        }
+        
+        function selectConversation(institutionName) {
+            currentConversation = institutionName;
+            document.getElementById('conversationTitle').textContent = institutionName;
+            document.getElementById('conversationActions').style.display = 'flex';
+            document.getElementById('welcomeMessage').style.display = 'none';
+            document.getElementById('messagesList').style.display = 'block';
+            document.getElementById('messageInput').style.display = 'block';
+            
+            displayMessages(institutionName);
+            markConversationAsRead(institutionName);
+        }
+        
+        function displayMessages(institutionName) {
+            const conversations = getConversations();
+            const conversation = conversations.find(conv => conv.institutionName === institutionName);
+            const messagesList = document.getElementById('messagesList');
+            
+            if (!conversation || conversation.messages.length === 0) {
+                messagesList.innerHTML = '<p style="text-align: center; color: var(--text-light); padding: 40px;">No messages in this conversation yet.</p>';
+                return;
+            }
+            
+            messagesList.innerHTML = conversation.messages.map(message => {
+                const isFromFaculty = message.sender === 'faculty';
+                const messageTime = new Date(message.timestamp).toLocaleString();
+                
+                return `
+                    <div class="message" style="margin-bottom: 16px; display: flex; ${isFromFaculty ? 'justify-content: flex-end' : 'justify-content: flex-start'};">
+                        <div style="max-width: 70%; padding: 12px 16px; border-radius: 12px; ${isFromFaculty ? 
+                            'background: var(--primary); color: white; border-bottom-right-radius: 4px;' : 
+                            'background: var(--light); color: var(--dark); border-bottom-left-radius: 4px;'}
+                        }">
+                            <p style="margin: 0; font-size: 14px; line-height: 1.4;">${message.content}</p>
+                            <small style="font-size: 11px; opacity: 0.8; margin-top: 4px; display: block;">${messageTime}</small>
+                        </div>
+                    </div>
+                `;
+            }).join('');
+            
+            // Scroll to bottom
+            const messagesContainer = document.getElementById('messagesContainer');
+            messagesContainer.scrollTop = messagesContainer.scrollHeight;
+        }
+        
+        function sendMessage() {
+            const messageText = document.getElementById('newMessageText').value.trim();
+            if (!messageText || !currentConversation) return;
+            
+            const message = {
+                content: messageText,
+                sender: 'faculty',
+                institutionName: currentConversation,
+                facultyEmail: currentUser?.email || 'guest'
+            };
+            
+            saveMessage(message);
+            document.getElementById('newMessageText').value = '';
+            displayMessages(currentConversation);
+            displayConversations();
+            updateMessageStats();
+            
+            // Also save to institution messages for two-way communication
+            const institutionMessages = JSON.parse(localStorage.getItem('institutionMessages_' + currentConversation) || '[]');
+            institutionMessages.push(message);
+            localStorage.setItem('institutionMessages_' + currentConversation, JSON.stringify(institutionMessages));
+        }
+        
+        function startNewConversation() {
+            const institutionName = prompt('Enter institution name to start a conversation:');
+            if (!institutionName) return;
+            
+            const message = {
+                content: 'Hello! I am interested in learning more about job opportunities at your institution.',
+                sender: 'faculty',
+                institutionName: institutionName,
+                facultyEmail: currentUser?.email || 'guest'
+            };
+            
+            saveMessage(message);
+            displayConversations();
+            selectConversation(institutionName);
+            updateMessageStats();
+        }
+        
+        function markConversationAsRead(institutionName) {
+            const messages = getMessages();
+            let updated = false;
+            
+            messages.forEach(message => {
+                if (message.institutionName === institutionName && !message.read && message.sender !== 'faculty') {
+                    message.read = true;
+                    updated = true;
+                }
+            });
+            
+            if (updated) {
+                localStorage.setItem('facultyMessages_' + (currentUser?.email || 'guest'), JSON.stringify(messages));
+                displayConversations();
+                updateMessageStats();
+            }
+        }
+        
+        function markAllAsRead() {
+            const messages = getMessages();
+            let updated = false;
+            
+            messages.forEach(message => {
+                if (!message.read && message.sender !== 'faculty') {
+                    message.read = true;
+                    updated = true;
+                }
+            });
+            
+            if (updated) {
+                localStorage.setItem('facultyMessages_' + (currentUser?.email || 'guest'), JSON.stringify(messages));
+                displayConversations();
+                updateMessageStats();
+                showNotification('All messages marked as read!', 'success');
+            }
+        }
+        
+        function refreshMessages() {
+            displayConversations();
+            if (currentConversation) {
+                displayMessages(currentConversation);
+            }
+            updateMessageStats();
+            showNotification('Messages refreshed!', 'success');
+        }
+        
+        function updateMessageStats() {
+            const conversations = getConversations();
+            const unreadCount = conversations.reduce((total, conv) => total + conv.unreadCount, 0);
+            const institutionCount = conversations.length;
+            
+            document.getElementById('unreadMessages').textContent = unreadCount;
+            document.getElementById('totalConversations').textContent = conversations.length;
+            document.getElementById('institutionContacts').textContent = institutionCount;
+        }
+        
+        // Settings system
+        function switchSettingsTab(tabName) {
+            const settingsContents = document.querySelectorAll('.settings-content');
+            const settingsLinks = document.querySelectorAll('.settings-link');
+            
+            // Hide all settings content
+            settingsContents.forEach(content => {
+                content.style.display = 'none';
+            });
+            
+            // Remove active class from all links
+            settingsLinks.forEach(link => {
+                link.classList.remove('active');
+            });
+            
+            // Show selected content and activate link
+            const targetContent = document.getElementById(tabName + '-settings');
+            const targetLink = document.querySelector(`[data-settings="${tabName}"]`);
+            
+            if (targetContent) {
+                targetContent.style.display = 'block';
+            }
+            if (targetLink) {
+                targetLink.classList.add('active');
+            }
+        }
+        
+        function loadUserProfileData() {
+            if (!currentUser) return;
+            
+            const profile = currentUser.profile || {};
+            
+            document.getElementById('updateName').value = currentUser.name || '';
+            document.getElementById('updateEmail').value = currentUser.email || '';
+            document.getElementById('updatePhone').value = currentUser.phone || '';
+            document.getElementById('updateQualification').value = profile.qualification || 'PhD';
+            document.getElementById('updateSpecialization').value = profile.specialization || '';
+            document.getElementById('updateTeachingExp').value = profile.teachingExp || 0;
+            document.getElementById('updateResearchExp').value = profile.researchExp || 0;
+            document.getElementById('updateCurrentSalary').value = profile.currentSalary || '';
+            document.getElementById('updateResearchInterests').value = (profile.researchInterests || []).join(', ');
+            
+            // Load notification preferences
+            const notifications = profile.notifications || {};
+            document.getElementById('emailJobAlerts').checked = notifications.emailJobAlerts !== false;
+            document.getElementById('emailApplicationUpdates').checked = notifications.emailApplicationUpdates !== false;
+            document.getElementById('emailTestReminders').checked = notifications.emailTestReminders !== false;
+            document.getElementById('emailMessages').checked = notifications.emailMessages === true;
+            document.getElementById('dashboardAlerts').checked = notifications.dashboardAlerts !== false;
+            document.getElementById('dashboardReminders').checked = notifications.dashboardReminders !== false;
+        }
+        
+        function updateUserProfile() {
+            if (!currentUser) return;
+            
+            const updatedData = {
+                name: document.getElementById('updateName').value.trim(),
+                email: document.getElementById('updateEmail').value.trim(),
+                phone: document.getElementById('updatePhone').value.trim(),
+                profile: {
+                    ...currentUser.profile,
+                    qualification: document.getElementById('updateQualification').value,
+                    specialization: document.getElementById('updateSpecialization').value.trim(),
+                    teachingExp: Number(document.getElementById('updateTeachingExp').value || 0),
+                    researchExp: Number(document.getElementById('updateResearchExp').value || 0),
+                    currentSalary: document.getElementById('updateCurrentSalary').value.trim(),
+                    researchInterests: document.getElementById('updateResearchInterests').value.split(',').map(s => s.trim()).filter(Boolean)
+                }
+            };
+            
+            // Handle CV update
+            const cvFile = document.getElementById('updateCV').files[0];
+            if (cvFile) {
+                const fileName = cvFile.name;
+                const fileExtension = fileName.split('.').pop().toLowerCase();
+                if (fileExtension !== 'doc' && fileExtension !== 'docx') {
+                    showNotification('CV must be a Word document (.doc or .docx)', 'warning');
+                    return;
+                }
+                updatedData.profile.cvName = fileName;
+            }
+            
+            // Update user in localStorage
+            const users = JSON.parse(localStorage.getItem('users') || '[]');
+            const userIndex = users.findIndex(u => u.email === currentUser.email);
+            
+            if (userIndex !== -1) {
+                users[userIndex] = { ...users[userIndex], ...updatedData };
+                localStorage.setItem('users', JSON.stringify(users));
+                
+                // Update current user object
+                currentUser = users[userIndex];
+                localStorage.setItem('currentUser', JSON.stringify(currentUser));
+                
+                showNotification('Profile updated successfully!', 'success');
+                updateProfileSummary(); // Update the header display
+            }
+        }
+        
+        function saveNotificationPreferences() {
+            if (!currentUser) return;
+            
+            const notifications = {
+                emailJobAlerts: document.getElementById('emailJobAlerts').checked,
+                emailApplicationUpdates: document.getElementById('emailApplicationUpdates').checked,
+                emailTestReminders: document.getElementById('emailTestReminders').checked,
+                emailMessages: document.getElementById('emailMessages').checked,
+                dashboardAlerts: document.getElementById('dashboardAlerts').checked,
+                dashboardReminders: document.getElementById('dashboardReminders').checked
+            };
+            
+            // Update user in localStorage
+            const users = JSON.parse(localStorage.getItem('users') || '[]');
+            const userIndex = users.findIndex(u => u.email === currentUser.email);
+            
+            if (userIndex !== -1) {
+                if (!users[userIndex].profile) users[userIndex].profile = {};
+                users[userIndex].profile.notifications = notifications;
+                
+                localStorage.setItem('users', JSON.stringify(users));
+                
+                // Update current user object
+                currentUser.profile = users[userIndex].profile;
+                localStorage.setItem('currentUser', JSON.stringify(currentUser));
+                
+                showNotification('Notification preferences updated successfully!', 'success');
+            }
+        }
+        
+        // Section navigation
+        function switchSection(sectionName) {
+            const jobsSection = document.querySelector('.dash');
+            const applicationsSection = document.getElementById('applications-section');
+            const messagesSection = document.getElementById('messages-section');
+            const settingsSection = document.getElementById('settings-section');
+            const navLinks = document.querySelectorAll('.nav-link[data-section]');
+            
+            // Update navigation active state
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('data-section') === sectionName) {
+                    link.classList.add('active');
+                }
+            });
+            
+            // Show/hide sections
+            if (sectionName === 'jobs') {
+                jobsSection.style.display = 'grid';
+                applicationsSection.style.display = 'none';
+                messagesSection.style.display = 'none';
+                settingsSection.style.display = 'none';
+            } else if (sectionName === 'applications') {
+                jobsSection.style.display = 'none';
+                applicationsSection.style.display = 'block';
+                messagesSection.style.display = 'none';
+                settingsSection.style.display = 'none';
+                displaySavedJobs();
+                updateApplicationStats();
+            } else if (sectionName === 'messages') {
+                jobsSection.style.display = 'none';
+                applicationsSection.style.display = 'none';
+                messagesSection.style.display = 'block';
+                settingsSection.style.display = 'none';
+                displayConversations();
+                updateMessageStats();
+            } else if (sectionName === 'settings') {
+                jobsSection.style.display = 'none';
+                applicationsSection.style.display = 'none';
+                messagesSection.style.display = 'none';
+                settingsSection.style.display = 'block';
+                loadUserProfileData();
+                switchSettingsTab('profile'); // Default to profile tab
+            }
+        }
+        
+        function switchToJobsSection() {
+            switchSection('jobs');
+        }
+        
+        // Function to update save button states based on already saved jobs
+        function updateSaveButtonStates() {
+            const savedJobs = getSavedJobs();
+            const savedTitles = savedJobs.map(job => job.title);
+            
+            document.querySelectorAll('.btn-ghost').forEach(button => {
+                if (button.textContent.trim() === 'Save for Later') {
+                    const jobCard = button.closest('.job-card');
+                    if (jobCard) {
+                        const jobTitle = jobCard.querySelector('.job-title')?.textContent?.trim();
+                        if (jobTitle && savedTitles.includes(jobTitle)) {
+                            button.textContent = 'Saved ✓';
+                            button.style.background = 'var(--success)';
+                            button.style.color = 'white';
+                            button.style.border = '1px solid var(--success)';
+                            button.disabled = true;
+                        }
+                    }
+                }
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', function () {
+            // Load user session first
+            if (!loadUserSession()) {
+                return; // Will redirect if session is invalid
+            }
+            
+            // Update profile summary with user data
+            updateProfileSummary();
+            
+            // Initialize application stats
+            updateApplicationStats();
+            
+            // Update save button states based on already saved jobs
+            updateSaveButtonStates();
+            
+            // Initialize messages
+            updateMessageStats();
+            
+            // Add keyboard support for sending messages
+            document.getElementById('newMessageText').addEventListener('keydown', function(e) {
+                if (e.key === 'Enter' && !e.shiftKey) {
+                    e.preventDefault();
+                    sendMessage();
+                }
+            });
+            
+            // Update stats based on job data
+            const totalJobs = document.querySelectorAll('.job-card').length;
+            const matchedJobs = document.querySelectorAll('.job-match').length;
+
+            document.getElementById('totalJobs').textContent = totalJobs;
+            document.getElementById('matchedJobs').textContent = matchedJobs;
+
+            // Filter functionality
+            const filterCheckboxes = document.querySelectorAll('.filter-options input');
+            filterCheckboxes.forEach(checkbox => {
+                checkbox.addEventListener('change', filterJobs);
+            });
+
+            function filterJobs() {
+                const jobCards = document.querySelectorAll('.job-card');
+                const difficultyFilters = document.querySelectorAll('[data-difficulty]:checked');
+                const testFilters = document.querySelectorAll('[data-test]:checked');
+                const jobTypeFilters = document.querySelectorAll('.filter-options input[type="checkbox"]:checked');
+                
+                const selectedDifficulties = Array.from(difficultyFilters).map(cb => cb.getAttribute('data-difficulty'));
+                const selectedTestTypes = Array.from(testFilters).map(cb => cb.getAttribute('data-test'));
+                
+                let visibleCount = 0;
+                
+                jobCards.forEach(card => {
+                    const jobTitle = card.querySelector('.job-title').textContent;
+                    const jobData = jobsData[jobTitle];
+                    
+                    let shouldShow = true;
+                    
+                    // Filter by difficulty level
+                    if (jobData && selectedDifficulties.length > 0) {
+                        const difficulty = jobData.difficultyPoints;
+                        let matchesDifficulty = false;
+                        
+                        if (selectedDifficulties.includes('easy') && difficulty >= 1 && difficulty <= 3) {
+                            matchesDifficulty = true;
+                        }
+                        if (selectedDifficulties.includes('medium') && difficulty >= 4 && difficulty <= 6) {
+                            matchesDifficulty = true;
+                        }
+                        if (selectedDifficulties.includes('hard') && difficulty >= 7 && difficulty <= 10) {
+                            matchesDifficulty = true;
+                        }
+                        
+                        if (!matchesDifficulty) {
+                            shouldShow = false;
+                        }
+                    }
+                    
+                    // Filter by test requirement
+                    if (jobData && selectedTestTypes.length > 0) {
+                        const hasTest = jobData.hasTest;
+                        let matchesTestType = false;
+                        
+                        if (selectedTestTypes.includes('with-test') && hasTest) {
+                            matchesTestType = true;
+                        }
+                        if (selectedTestTypes.includes('no-test') && !hasTest) {
+                            matchesTestType = true;
+                        }
+                        
+                        if (!matchesTestType) {
+                            shouldShow = false;
+                        }
+                    }
+                    
+                    // Show/hide the job card
+                    if (shouldShow) {
+                        card.style.display = 'block';
+                        visibleCount++;
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+                
+                // Update job count
+                document.getElementById('totalJobs').textContent = visibleCount;
+            }
+
+            // Apply button functionality
+            const applyButtons = document.querySelectorAll('.btn-primary');
+            applyButtons.forEach(button => {
+                if (button.textContent.trim() === 'Apply Now') {
+                    button.addEventListener('click', function () {
+                        const jobTitle = this.closest('.job-card').querySelector('.job-title').textContent;
+                        showConfirmationModal(jobTitle);
+                    });
+                }
+            });
+            
+            // Save for Later button functionality
+            const saveButtons = document.querySelectorAll('.btn-ghost');
+            saveButtons.forEach(button => {
+                if (button.textContent.trim() === 'Save for Later') {
+                    button.addEventListener('click', function (e) {
+                        e.preventDefault();
+                        
+                        const jobCard = this.closest('.job-card');
+                        if (!jobCard) {
+                            console.error('Job card not found');
+                            return;
+                        }
+                        
+                        // Extract job data with better error handling
+                        const titleElement = jobCard.querySelector('.job-title');
+                        const institutionElement = jobCard.querySelector('.job-institution');
+                        const locationElement = jobCard.querySelector('.job-location');
+                        const jobDetails = jobCard.querySelectorAll('.job-detail');
+                        const descriptionElement = jobCard.querySelector('.job-description p');
+                        const difficultyElement = jobCard.querySelector('.difficulty-badge');
+                        const tagElements = jobCard.querySelectorAll('.job-tag');
+                        
+                        if (!titleElement || !institutionElement) {
+                            alert('Unable to save job - missing required information');
+                            return;
+                        }
+                        
+                        const jobData = {
+                            title: titleElement.textContent.trim(),
+                            institution: institutionElement.textContent.trim(),
+                            location: locationElement ? locationElement.textContent.replace('📍', '').trim() : 'Not specified',
+                            salary: jobDetails[0] ? jobDetails[0].textContent.replace('💰', '').trim() : 'Not specified',
+                            type: jobDetails[1] ? jobDetails[1].textContent.replace('⏱️', '').trim() : 'Not specified',
+                            description: descriptionElement ? descriptionElement.textContent.trim() : 'No description available',
+                            difficulty: difficultyElement ? difficultyElement.getAttribute('data-difficulty') : '5',
+                            tags: Array.from(tagElements).map(tag => tag.textContent.trim()),
+                            savedBy: currentUser?.email || 'guest',
+                            id: Date.now() + '_' + Math.random().toString(36).substr(2, 9) // Unique ID
+                        };
+                        
+                        console.log('Saving job data:', jobData);
+                        
+                        if (saveJobToStorage(jobData)) {
+                            // Update button appearance
+                            this.textContent = 'Saved ✓';
+                            this.style.background = 'var(--success)';
+                            this.style.color = 'white';
+                            this.style.border = '1px solid var(--success)';
+                            this.disabled = true;
+                            
+                            // Show success notification
+                            showNotification('Job saved successfully! Check your Applications section.', 'success');
+                            
+                            // Update stats immediately
+                            updateApplicationStats();
+                            
+                            console.log('Job saved successfully:', jobData.title);
+                        } else {
+                            showNotification('This job is already saved in your Applications!', 'warning');
+                        }
+                    });
+                }
+            });
+            
+            // Helper function for notifications
+            function showNotification(message, type = 'success') {
+                const notification = document.createElement('div');
+                notification.textContent = message;
+                notification.style.cssText = `
+                    position: fixed;
+                    top: 20px;
+                    right: 20px;
+                    background: ${type === 'success' ? 'var(--success)' : type === 'warning' ? 'var(--warning)' : 'var(--danger)'};
+                    color: white;
+                    padding: 12px 20px;
+                    border-radius: 8px;
+                    z-index: 1000;
+                    font-weight: 500;
+                    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+                    max-width: 300px;
+                    word-wrap: break-word;
+                `;
+                
+                document.body.appendChild(notification);
+                
+                // Animate in
+                setTimeout(() => {
+                    notification.style.transform = 'translateX(0)';
+                    notification.style.opacity = '1';
+                }, 10);
+                
+                // Remove after 4 seconds
+                setTimeout(() => {
+                    notification.style.opacity = '0';
+                    notification.style.transform = 'translateX(100%)';
+                    setTimeout(() => {
+                        if (document.body.contains(notification)) {
+                            document.body.removeChild(notification);
+                        }
+                    }, 300);
+                }, 4000);
+            }
+            
+            // Navigation functionality
+            const navLinks = document.querySelectorAll('.nav-link[data-section]');
+            navLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const section = this.getAttribute('data-section');
+                    switchSection(section);
+                });
+            });
+            
+            // Settings navigation
+            const settingsLinks = document.querySelectorAll('.settings-link');
+            settingsLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const tab = this.getAttribute('data-settings');
+                    switchSettingsTab(tab);
+                });
+            });
+            
+            // Profile update form
+            document.getElementById('profileUpdateForm').addEventListener('submit', function(e) {
+                e.preventDefault();
+                updateUserProfile();
+            });
+            
+            // Notification preferences form
+            document.getElementById('notificationPreferencesForm').addEventListener('submit', function(e) {
+                e.preventDefault();
+                saveNotificationPreferences();
+            });
+            
+            // CV file validation for update
+            document.getElementById('updateCV').addEventListener('change', function(e) {
+                const file = e.target.files[0];
+                const helpText = e.target.nextElementSibling;
+                
+                if (file) {
+                    const fileName = file.name;
+                    const fileExtension = fileName.split('.').pop().toLowerCase();
+                    
+                    if (fileExtension !== 'doc' && fileExtension !== 'docx') {
+                        helpText.textContent = 'Error: Only Word documents (.doc, .docx) are accepted.';
+                        helpText.style.color = 'var(--danger)';
+                        e.target.value = '';
+                    } else {
+                        helpText.textContent = `Selected: ${fileName} - Valid Word document.`;
+                        helpText.style.color = 'var(--success)';
+                    }
+                } else {
+                    helpText.textContent = 'Only Word documents (.doc, .docx) are accepted.';
+                    helpText.style.color = '';
+                }
+            });
+            
+            // Test modal event listeners
+            document.getElementById('cancelApplication').addEventListener('click', hideConfirmationModal);
+            document.getElementById('startTest').addEventListener('click', startTest);
+            document.getElementById('closeTestModal').addEventListener('click', closeTestModal);
+            document.getElementById('cancelTest').addEventListener('click', cancelTest);
+            document.getElementById('submitTest').addEventListener('click', () => submitTest(false));
+            
+            // Close modals when clicking outside
+            document.getElementById('confirmationModal').addEventListener('click', function(e) {
+                if (e.target === this) {
+                    hideConfirmationModal();
+                }
+            });
+            
+            document.getElementById('testModal').addEventListener('click', function(e) {
+                if (e.target === this) {
+                    // Don't allow closing test modal by clicking outside during test
+                    // User must explicitly cancel or submit
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

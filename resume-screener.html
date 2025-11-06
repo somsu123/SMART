@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>AI Resume Screener</title>
+    <style>
+        body { font-family: Arial, sans-serif; background-color: #f0f0f0; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; }
+        .container { background: white; padding: 20px; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1); width: 400px; }
+        h1 { text-align: center; }
+        input, button { width: 100%; margin: 10px 0; padding: 10px; }
+        button { background: #007bff; color: white; border: none; cursor: pointer; }
+        #skills { margin-top: 20px; }
+        #skills ul { list-style-type: none; padding: 0; }
+        #skills li { background: #e9ecef; margin: 5px 0; padding: 10px; border-radius: 4px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Resume Screener</h1>
+        <input type="file" id="resume" accept=".docx">
+        <button onclick="screenResume()">Submit</button>
+        <h2>Extracted Skills</h2>
+        <div id="skills"></div>
+    </div>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mammoth/1.4.2/mammoth.browser.min.js"></script>
+    <script>
+        async function screenResume() {
+            const file = document.getElementById('resume').files[0];
+            if (!file) return;
+            if (file.type !== 'application/vnd.openxmlformats-officedocument.wordprocessingml.document') {
+                alert('Please upload a .docx file.');
+                return;
+            }
+            let text = '';
+            text = await extractDocxText(file);
+            const skills = extractSkills(text);
+            document.getElementById('skills').innerHTML = '<ul>' + skills.map(s => `<li>${s}</li>`).join('') + '</ul>';
+        }
+
+        
+        async function extractDocxText(file) {
+            const arrayBuffer = await file.arrayBuffer();
+            const result = await mammoth.extractRawText({arrayBuffer});
+            return result.value;
+        }
+
+        function extractSkills(text) {
+            // Simple keyword matching for skills
+            const knownSkills = ['Java', 'Python', 'JavaScript', 'React', 'Node.js', 'SQL', 'Machine Learning', 'Data Analysis', 'Project Management', 'Communication', 'Leadership', 'Teamwork', 'Problem Solving', 'HTML', 'CSS', 'Angular', 'Vue.js', 'Docker', 'Kubernetes', 'AWS', 'Azure']; // Expanded list
+            const words = text.toLowerCase().split(/\s+/);
+            const found = new Set();
+            knownSkills.forEach(skill => {
+                if (words.includes(skill.toLowerCase())) {
+                    found.add(skill);
+                }
+            });
+            return Array.from(found);
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,1586 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>SMART HIRING | Faculty Recruitment Platform</title>
+  <meta name="description" content="SMART HIRING - Premium platform for faculty and institutions. Create academic profiles, find faculty positions, and hire top educators with our professional interface.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #2563eb;           /* Professional blue */
+      --primary-600: #1d4ed8;
+      --primary-700: #1e40af;
+      --primary-50: #eff6ff;
+      --accent: #0ea5e9;
+      --accent-50: #f0f9ff;
+      --bg: #f8fafc;
+      --card: #ffffff;
+      --text: #0f172a;
+      --text-light: #475569;
+      --muted: #64748b;
+      --muted-light: #94a3b8;
+      --border: #e2e8f0;
+      --border-light: #f1f5f9;
+      --success: #10b981;
+      --danger: #ef4444;
+      --warning: #f59e0b;
+      --shadow: 0 10px 25px rgba(15, 23, 42, 0.08);
+      --shadow-lg: 0 20px 40px rgba(15, 23, 42, 0.12);
+      --radius: 16px;
+      --radius-sm: 12px;
+      --radius-xs: 8px;
+      --transition: all 0.2s ease-in-out;
+    }
+
+    * { box-sizing: border-box; }
+    html, body { height: 100%; }
+    body {
+      margin: 0;
+      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+      color: var(--text);
+      background: linear-gradient(160deg, rgba(15, 76, 219, 0.05), rgba(26, 115, 232, 0.03)) no-repeat fixed, var(--bg);
+      line-height: 1.6;
+    }
+
+    a { color: var(--primary); text-decoration: none; transition: var(--transition); }
+    a:hover { text-decoration: underline; color: var(--primary-700); }
+
+    /* Header */
+    .nav {
+      position: sticky;
+      top: 0;
+      backdrop-filter: saturate(180%) blur(12px);
+      background: rgba(255,255,255,0.85);
+      border-bottom: 1px solid rgba(15, 23, 42, 0.05);
+      z-index: 50;
+      box-shadow: 0 1px 3px rgba(15, 23, 42, 0.04);
+    }
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 72px;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-family: Poppins, Inter, sans-serif;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+    }
+    .logo {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      color: white;
+      box-shadow: 0 8px 18px rgba(26, 115, 232, 0.25);
+      position: relative;
+      overflow: hidden;
+    }
+    .logo::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(135deg, rgba(255,255,255,0.1), rgba(255,255,255,0));
+      pointer-events: none;
+    }
+    .logo-mark {
+      width: 12px; 
+      height: 12px; 
+      border-radius: 50%; 
+      background: #fff;
+      box-shadow: 0 0 0 2px rgba(255,255,255,0.35);
+    }
+    .brand-name { 
+      font-size: 20px; 
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .nav-cta a {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 12px 20px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      color: white;
+      font-weight: 600;
+      box-shadow: 0 8px 18px rgba(26, 115, 232, 0.25);
+      transition: var(--transition);
+    }
+    .nav-cta a:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 24px rgba(26, 115, 232, 0.3);
+      text-decoration: none;
+    }
+
+    /* Hero */
+    .hero {
+      padding: 60px 0 40px;
+    }
+    .hero-inner {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 40px;
+      align-items: center;
+    }
+    .hero h1 {
+      font-size: 42px;
+      line-height: 1.15;
+      margin: 0 0 16px 0;
+      letter-spacing: -0.02em;
+      font-weight: 700;
+      background: linear-gradient(135deg, #0f172a, #334155);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .hero p {
+      margin: 0;
+      color: var(--text-light);
+      font-size: 16px;
+      max-width: 90%;
+    }
+
+    /* Card */
+    .card {
+      background: var(--card);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      border: 1px solid var(--border-light);
+      transition: var(--transition);
+    }
+    .card:hover {
+      box-shadow: var(--shadow-lg);
+    }
+
+    /* Auth widget */
+    .auth-card {
+      overflow: hidden;
+      position: relative;
+    }
+    .auth-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, var(--primary), var(--accent));
+    }
+    .auth-header {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      background: var(--primary-50);
+      border-bottom: 1px solid var(--border);
+    }
+    .auth-tab {
+      position: relative;
+      text-align: center;
+      padding: 18px 0;
+      cursor: pointer;
+      font-weight: 600;
+      color: var(--text-light);
+      user-select: none;
+      transition: var(--transition);
+    }
+    .auth-tab.active {
+      color: var(--primary-700);
+      background: #fff;
+    }
+    .auth-tab:not(.active):hover {
+      color: var(--primary);
+      background: rgba(255,255,255,0.5);
+    }
+    .auth-tab.active::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 20%;
+      right: 20%;
+      height: 3px;
+      background: linear-gradient(90deg, var(--primary), var(--accent));
+      border-radius: 999px;
+    }
+
+    .auth-body {
+      padding: 28px;
+    }
+
+    form .row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+    }
+    .field { margin-bottom: 18px; }
+    .field label { 
+      display: block; 
+      font-size: 13px; 
+      color: var(--text-light); 
+      margin-bottom: 8px; 
+      font-weight: 600; 
+      letter-spacing: 0.01em;
+    }
+    .field input[type="text"],
+    .field input[type="email"],
+    .field input[type="password"],
+    .field input[type="number"],
+    .field input[type="url"],
+    .field textarea,
+    .field select {
+      width: 100%;
+      padding: 14px 16px;
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--border);
+      background: #fff;
+      outline: none;
+      transition: var(--transition);
+      font-size: 15px;
+      color: var(--text);
+    }
+    .field textarea { min-height: 100px; resize: vertical; }
+    .field input:focus,
+    .field textarea:focus,
+    .field select:focus { 
+      border-color: var(--primary); 
+      box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1); 
+    }
+
+    .muted { color: var(--muted); font-size: 14px; }
+    .help { font-size: 12px; color: var(--muted-light); margin-top: 6px; }
+
+    .radio-group {
+      display: inline-flex;
+      gap: 12px;
+      align-items: center;
+      flex-wrap: wrap;
+      margin: 8px 0 10px;
+    }
+    .radio {
+      display: inline-flex; 
+      align-items: center; 
+      gap: 10px;
+      padding: 10px 16px; 
+      border: 1px solid var(--border); 
+      border-radius: 12px; 
+      cursor: pointer; 
+      font-weight: 600; 
+      color: var(--text);
+      background: #fff;
+      transition: var(--transition);
+    }
+    .radio:hover {
+      border-color: var(--primary);
+      background: var(--primary-50);
+    }
+    .radio input { accent-color: var(--primary); }
+
+    .actions { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-top: 8px; }
+
+    .btn {
+      display: inline-flex; 
+      align-items: center; 
+      justify-content: center; 
+      gap: 10px;
+      padding: 14px 20px; 
+      border-radius: 12px; 
+      border: 1px solid transparent; 
+      cursor: pointer; 
+      font-weight: 600; 
+      letter-spacing: 0.01em;
+      transition: var(--transition);
+      font-size: 15px;
+    }
+    .btn-primary { 
+      background: linear-gradient(135deg, var(--primary), var(--accent)); 
+      color: #fff; 
+      box-shadow: 0 8px 18px rgba(26, 115, 232, 0.25); 
+    }
+    .btn-primary:hover { 
+      transform: translateY(-2px);
+      box-shadow: 0 12px 24px rgba(26, 115, 232, 0.3); 
+    }
+    .btn-ghost { 
+      background: #fff; 
+      border-color: var(--border); 
+      color: var(--text); 
+    }
+    .btn-ghost:hover {
+      background: var(--primary-50);
+      border-color: var(--primary);
+    }
+
+    .error { color: var(--danger); font-size: 13px; margin-top: 8px; }
+    .success { color: var(--success); font-size: 13px; margin-top: 8px; }
+
+    .hint-row { display: flex; align-items: center; justify-content: space-between; margin-top: 8px; }
+
+    /* Dashboard */
+    .hidden { display: none !important; }
+
+    .dash {
+      margin-top: 24px;
+      display: grid;
+      grid-template-columns: 340px 1fr;
+      gap: 24px;
+    }
+    .side-card { padding: 24px; }
+    .side-card h3 { margin: 0 0 12px 0; font-size: 18px; font-weight: 600; }
+    .profile-summary { display: grid; gap: 12px; font-size: 15px; color: var(--text-light); }
+    .summary-chip { 
+      display: inline-flex; 
+      align-items: center; 
+      gap: 8px; 
+      padding: 8px 12px; 
+      background: var(--primary-50); 
+      border-radius: 999px; 
+      font-size: 13px; 
+      color: var(--primary-700);
+      border: 1px solid rgba(37, 99, 235, 0.1);
+    }
+
+    .edit-card { padding: 24px; }
+    .edit-card h2 { margin: 0 0 12px 0; font-size: 22px; font-weight: 600; }
+
+    .tag-input {
+      display: flex; 
+      gap: 10px; 
+      flex-wrap: wrap; 
+      align-items: center;
+      padding: 12px; 
+      border: 1px dashed var(--border); 
+      border-radius: var(--radius-sm);
+      background: var(--primary-50);
+    }
+    .tag-input input { 
+      border: none; 
+      outline: none; 
+      flex: 1; 
+      min-width: 120px; 
+      background: transparent;
+      padding: 4px 0;
+    }
+    .tag { 
+      background: var(--primary); 
+      color: white; 
+      border: 1px solid var(--primary-600); 
+      padding: 6px 12px; 
+      border-radius: 999px; 
+      font-size: 13px; 
+      display: inline-flex; 
+      align-items: center; 
+      gap: 8px; 
+      font-weight: 500;
+    }
+    .tag button { 
+      all: unset; 
+      cursor: pointer; 
+      font-weight: 700; 
+      color: rgba(255,255,255,0.8); 
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      transition: var(--transition);
+    }
+    .tag button:hover {
+      background: rgba(255,255,255,0.2);
+    }
+
+    footer {
+      margin: 40px 0 60px;
+      text-align: center;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    /* Location verification */
+    .location-verification {
+      margin-top: 16px;
+      padding: 16px;
+      border-radius: var(--radius-sm);
+      background: var(--primary-50);
+      border: 1px solid var(--border);
+    }
+    
+    .location-status {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 12px;
+    }
+    
+    .location-icon {
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+    }
+    
+    .location-icon.pending {
+      background: var(--warning);
+      color: white;
+    }
+    
+    .location-icon.success {
+      background: var(--success);
+      color: white;
+    }
+    
+    .location-icon.error {
+      background: var(--danger);
+      color: white;
+    }
+    
+    .location-details {
+      font-size: 13px;
+      color: var(--text-light);
+      margin-top: 8px;
+    }
+
+    /* Premium features */
+    .premium-features {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      margin: 32px 0;
+    }
+    .feature-card {
+      background: white;
+      border-radius: var(--radius);
+      padding: 24px;
+      box-shadow: var(--shadow);
+      border: 1px solid var(--border-light);
+      transition: var(--transition);
+      text-align: center;
+    }
+    .feature-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-lg);
+    }
+    .feature-icon {
+      width: 48px;
+      height: 48px;
+      margin: 0 auto 16px;
+      border-radius: 12px;
+      background: var(--primary-50);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--primary);
+      font-size: 20px;
+    }
+    .feature-card h3 {
+      margin: 0 0 8px;
+      font-size: 18px;
+      font-weight: 600;
+    }
+    .feature-card p {
+      margin: 0;
+      color: var(--text-light);
+      font-size: 14px;
+    }
+
+    /* Stats */
+    .stats {
+      display: flex;
+      justify-content: space-around;
+      margin: 40px 0;
+      text-align: center;
+    }
+    .stat {
+      display: flex;
+      flex-direction: column;
+    }
+    .stat-value {
+      font-size: 36px;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 4px;
+    }
+    .stat-label {
+      font-size: 14px;
+      color: var(--text-light);
+    }
+
+    /* Responsive */
+    @media (max-width: 1024px) {
+      .hero-inner { grid-template-columns: 1fr; }
+      .dash { grid-template-columns: 1fr; }
+      .premium-features { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 768px) {
+      .premium-features { grid-template-columns: 1fr; }
+      .stats { flex-direction: column; gap: 24px; }
+      .nav-inner { height: auto; padding: 16px 0; gap: 12px; }
+      .nav-cta { display: none; }
+      .hero h1 { font-size: 32px; }
+      form .row { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 480px) {
+      .container { padding: 0 16px; }
+      .auth-body { padding: 20px; }
+      .hero { padding: 40px 0 20px; }
+    }
+  </style>
+</head>
+<body>
+  <header class="nav">
+    <div class="container">
+      <div class="nav-inner">
+        <div class="brand" aria-label="SMART HIRING">
+          <div class="logo" aria-hidden="true"><span class="logo-mark"></span></div>
+          <div class="brand-name">SMART HIRING</div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="container hero">
+    <div class="hero-inner">
+      <section>
+        <h1>Connect Top Educators with Premier Institutions</h1>
+        <p class="muted">Our premium platform streamlines the faculty recruitment process for both educators and institutions. Create detailed academic profiles, access advanced matching algorithms, and make meaningful academic connections.</p>
+        
+        <div class="stats">
+          <div class="stat">
+            <div class="stat-value">2K+</div>
+            <div class="stat-label">Faculty Positions</div>
+          </div>
+          <div class="stat">
+            <div class="stat-value">50K+</div>
+            <div class="stat-label">Educators</div>
+          </div>
+          <div class="stat">
+            <div class="stat-value">1K+</div>
+            <div class="stat-label">Institutions</div>
+          </div>
+        </div>
+
+        <div class="premium-features">
+          <div class="feature-card">
+            <div class="feature-icon">✓</div>
+            <h3>Academic Matching</h3>
+            <p>AI-powered algorithms connect qualified faculty with institutions based on research interests and teaching expertise.</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">⚡</div>
+            <h3>Quick Placement</h3>
+            <p>Get academic positions quickly with our streamlined application and interview coordination system.</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">🔒</div>
+            <h3>Academic Privacy</h3>
+            <p>Your academic credentials and research data are protected with enterprise-grade security and privacy controls.</p>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div class="card auth-card" id="login" role="region" aria-label="Authentication">
+          <div class="auth-header">
+            <div class="auth-tab active" id="tabLogin" role="button" aria-controls="loginPanel" tabindex="0">Login</div>
+            <div class="auth-tab" id="tabRegister" role="button" aria-controls="registerPanel" tabindex="0">Register</div>
+          </div>
+          <div class="auth-body">
+            <!-- Login Panel -->
+            <div id="loginPanel">
+              <form id="loginForm" novalidate>
+                <div class="field">
+                  <label for="loginEmail">Email Address</label>
+                  <input type="email" id="loginEmail" placeholder="you@example.com" required />
+                </div>
+                <div class="field">
+                  <label for="loginPassword">Password</label>
+                  <input type="password" id="loginPassword" placeholder="••••••••" required />
+                </div>
+                <div class="hint-row">
+                  <label class="radio" style="border-radius: 8px">
+                    <input type="checkbox" id="rememberMe" />
+                    <span>Remember me</span>
+                  </label>
+                  <a href="#" style="font-size: 13px;">Forgot password?</a>
+                </div>
+                <div class="actions">
+                  <button class="btn btn-primary" type="submit">Sign In</button>
+                  <a id="goRegister" href="#">New here? Create an account</a>
+                </div>
+                <div id="loginMsg" class="error" role="alert" aria-live="polite"></div>
+              </form>
+            </div>
+
+            <!-- Register Panel -->
+            <div id="registerPanel" class="hidden" aria-hidden="true">
+              <form id="registerForm" novalidate>
+                <div class="field">
+                  <label>Register as</label>
+                <div class="radio-group" role="radiogroup" aria-label="Role">
+                    <label class="radio"><input type="radio" name="role" value="faculty" checked /> Faculty</label>
+                    <label class="radio"><input type="radio" name="role" value="institution" /> Institution</label>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="field">
+                    <label for="regName">Full Name</label>
+                    <input type="text" id="regName" placeholder="Jane Doe" required />
+                  </div>
+                  <div class="field">
+                    <label for="regEmail">Email Address</label>
+                    <input type="email" id="regEmail" placeholder="you@example.com" required />
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="field">
+                    <label for="regPassword">Password</label>
+                    <input type="password" id="regPassword" placeholder="At least 8 characters" required />
+                  </div>
+                  <div class="field">
+                    <label for="regPhone">Phone Number</label>
+                    <input type="text" id="regPhone" placeholder="e.g. +91 98765 43210" />
+                  </div>
+                </div>
+
+                <!-- Faculty specific -->
+                <div id="facultyFields">
+                  <div class="row">
+                    <div class="field">
+                      <label for="regQualification">Highest Qualification</label>
+                      <select id="regQualification">
+                        <option value="">Select Qualification</option>
+                        <option value="PhD">PhD</option>
+                        <option value="MPhil">MPhil</option>
+                        <option value="Masters">Masters</option>
+                        <option value="Bachelors">Bachelors</option>
+                        <option value="Other">Other</option>
+                      </select>
+                    </div>
+                    <div class="field">
+                      <label for="regSpecialization">Specialization/Subject</label>
+                      <input type="text" id="regSpecialization" placeholder="e.g. Computer Science, Mathematics" />
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="field">
+                      <label for="regTeachingExp">Teaching Experience (years)</label>
+                      <input type="number" min="0" id="regTeachingExp" placeholder="0" />
+                    </div>
+                    <div class="field">
+                      <label for="regResearchExp">Research Experience (years)</label>
+                      <input type="number" min="0" id="regResearchExp" placeholder="0" />
+                    </div>
+                  </div>
+                  <div class="field">
+                    <label for="regResearchInterests">Research Interests</label>
+                    <textarea id="regResearchInterests" placeholder="e.g. Artificial Intelligence, Machine Learning"></textarea>
+                    <div class="help">Comma-separated list</div>
+                  </div>
+                  <div class="row">
+                    <div class="field">
+                      <label for="regCurrentSalary">Current Salary (optional)</label>
+                      <input type="text" id="regCurrentSalary" placeholder="e.g. 8 LPA" />
+                    </div>
+                    <div class="field">
+                      <label for="regExpectedSalary">Expected Salary (optional)</label>
+                      <input type="text" id="regExpectedSalary" placeholder="e.g. 12 LPA" />
+                    </div>
+                  </div>
+                  <div class="field">
+                    <label for="regCV">CV/Resume (Word Document only)</label>
+                    <input type="file" id="regCV" accept=".doc,.docx" />
+                    <div class="help">Only Word documents (.doc, .docx) are accepted. Filename will be stored locally for demo purposes.</div>
+                  </div>
+                  <div class="field">
+                    <div id="resumeScreenerSection" class="card" style="padding: 16px; margin-top: 6px;">
+                      <h3 style="margin: 0 0 8px 0; font-size: 18px;">Resume Screener (DOCX)</h3>
+                      <p class="help" style="margin: 0 0 8px 0;">Optionally analyze your .docx resume to auto-detect skills.</p>
+                      <input type="file" id="resumeDocx" accept=".docx" />
+                      <div class="actions" style="justify-content: flex-start; margin-top: 8px;">
+                        <button type="button" class="btn btn-ghost" onclick="screenResume()">Analyze Resume</button>
+                      </div>
+                      <div id="resumeSkills" class="muted" style="margin-top: 8px;"></div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Institution specific -->
+                <div id="institutionFields" class="hidden">
+                  <div class="field">
+                    <label for="regInstitution">Institution Name</label>
+                    <input type="text" id="regInstitution" placeholder="e.g. IIT Delhi" required />
+                  </div>
+                  <div class="field">
+                    <label for="regInstitutionAddress">Institution Address</label>
+                    <textarea id="regInstitutionAddress" placeholder="Full institution address including city and country" required></textarea>
+                    <div class="help">This will be used for location verification</div>
+                  </div>
+                  <div class="field">
+                    <label for="regHiringSubjects">Hiring for subjects</label>
+                    <textarea id="regHiringSubjects" placeholder="e.g. Computer Science, Mathematics, Physics"></textarea>
+                  </div>
+                  <div class="field">
+                    <label for="regInstitutionSite">Institution website (optional)</label>
+                    <input type="url" id="regInstitutionSite" placeholder="https://example.edu" />
+                  </div>
+                  
+                  <!-- Location Verification Section -->
+                  <div class="location-verification" id="locationVerification">
+                    <div class="location-status">
+                      <div class="location-icon pending">!</div>
+                      <span>Location verification required</span>
+                    </div>
+                    <p class="muted">For security, we need to verify your location matches your institution address.</p>
+                    <button type="button" class="btn btn-primary" id="verifyLocationBtn" style="width: 100%; margin-top: 12px;">
+                      Verify My Location
+                    </button>
+                    <div class="location-details hidden" id="locationDetails">
+                      <div><strong>Detected Location:</strong> <span id="detectedLocation">-</span></div>
+                      <div><strong>Institution Address:</strong> <span id="companyAddress">-</span></div>
+                      <div><strong>Verification Status:</strong> <span id="verificationStatus">Pending</span></div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="hint-row">
+                  <label class="radio" style="border-radius: 8px">
+                    <input type="checkbox" id="regTerms" />
+                    <span>I agree to the <a href="#">Terms & Conditions</a> and <a href="#">Privacy Policy</a></span>
+                  </label>
+                </div>
+
+                <div class="actions">
+                  <button class="btn btn-primary" type="submit" id="registerSubmitBtn" disabled>Create Account</button>
+                  <button class="btn btn-ghost" type="reset">Reset</button>
+                </div>
+                <div id="registerMsg" class="error" role="alert" aria-live="polite"></div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- Dashboard -->
+    <section id="dashboard" class="hidden" aria-live="polite">
+      <div class="dash">
+        <aside class="card side-card">
+          <h3>Your Profile Summary</h3>
+            <div class="profile-summary" id="summary">
+              <div><strong>Welcome to your Academic Profile</strong></div>
+              <div class="muted">Manage your faculty or institution profile here</div>
+            </div>
+          <div style="height:16px"></div>
+          <button id="logoutBtn" class="btn btn-ghost" style="width:100%">Logout</button>
+          <div style="height:8px"></div>
+          <button id="deleteBtn" class="btn" style="width:100%; background:#fef2f2; color:#dc2626; border:1px solid #fecaca">Delete Account</button>
+        </aside>
+
+        <div class="card edit-card">
+          <h2>Edit Your Profile</h2>
+          <form id="profileForm">
+            <div class="row">
+              <div class="field"><label for="pfName">Full Name</label><input type="text" id="pfName" /></div>
+              <div class="field"><label for="pfEmail">Email Address</label><input type="email" id="pfEmail" disabled /></div>
+            </div>
+
+            <div class="row">
+              <div class="field"><label for="pfPhone">Phone Number</label><input type="text" id="pfPhone" /></div>
+              <div class="field"><label for="pfRole">Account Type</label><input type="text" id="pfRole" disabled /></div>
+            </div>
+
+            <div id="pfFaculty" class="">
+              <div class="row">
+                <div class="field"><label for="pfQualification">Highest Qualification</label><select id="pfQualification">
+                  <option value="">Select Qualification</option>
+                  <option value="PhD">PhD</option>
+                  <option value="MPhil">MPhil</option>
+                  <option value="Masters">Masters</option>
+                  <option value="Bachelors">Bachelors</option>
+                  <option value="Other">Other</option>
+                </select></div>
+                <div class="field"><label for="pfSpecialization">Specialization/Subject</label><input type="text" id="pfSpecialization" /></div>
+              </div>
+              <div class="row">
+                <div class="field"><label for="pfTeachingExp">Teaching Experience (years)</label><input type="number" min="0" id="pfTeachingExp" /></div>
+                <div class="field"><label for="pfResearchExp">Research Experience (years)</label><input type="number" min="0" id="pfResearchExp" /></div>
+              </div>
+              <div class="field">
+                <label>Research Interests</label>
+                <div class="tag-input" id="researchTags">
+                  <input id="researchInput" placeholder="Type a research interest and press Enter" />
+                </div>
+              </div>
+              <div class="row">
+                <div class="field"><label for="pfCurrentSalary">Current Salary</label><input type="text" id="pfCurrentSalary" /></div>
+                <div class="field"><label for="pfExpectedSalary">Expected Salary</label><input type="text" id="pfExpectedSalary" /></div>
+              </div>
+              <div class="field"><label for="pfCV">CV (filename only)</label><input type="text" id="pfCV" placeholder="cv.pdf" /></div>
+            </div>
+
+            <div id="pfInstitution" class="hidden">
+              <div class="field"><label for="pfInstitution">Institution</label><input type="text" id="pfInstitution" /></div>
+              <div class="field"><label for="pfInstitutionAddress">Institution Address</label><textarea id="pfInstitutionAddress"></textarea></div>
+              <div class="field"><label for="pfHiringSubjects">Hiring Subjects</label><textarea id="pfHiringSubjects"></textarea></div>
+              <div class="field"><label for="pfInstitutionSite">Institution Website</label><input type="url" id="pfInstitutionSite" /></div>
+            </div>
+
+            <div class="actions"><button class="btn btn-primary" type="submit">Save Changes</button></div>
+            <div id="profileMsg" class="success" aria-live="polite"></div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <footer>© <span id="yr"></span> SMART HIRING. All rights reserved.</footer>
+  </main>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mammoth/1.4.2/mammoth.browser.min.js"></script>
+  <script>
+    // Simple SPA using localStorage for demo purposes only
+    const USERS_KEY = 'smarthiring_users';
+    const SESSION_KEY = 'smarthiring_current_user_email';
+
+    // State
+    let currentUser = null;
+    let locationVerified = false;
+
+    // Utility functions
+    function getUsers() {
+      try {
+        return JSON.parse(localStorage.getItem(USERS_KEY)) || [];
+      } catch (e) { return []; }
+    }
+    function saveUsers(users) {
+      localStorage.setItem(USERS_KEY, JSON.stringify(users));
+    }
+    function findUserByEmail(email) {
+      return getUsers().find(u => (u.email || '').toLowerCase() === (email || '').toLowerCase());
+    }
+    function upsertUser(user) {
+      const users = getUsers();
+      const idx = users.findIndex(u => (u.email || '').toLowerCase() === (user.email || '').toLowerCase());
+      if (idx >= 0) users[idx] = user; else users.push(user);
+      saveUsers(users);
+    }
+
+    function setSession(email) { localStorage.setItem(SESSION_KEY, email); }
+    function clearSession() { localStorage.removeItem(SESSION_KEY); }
+    function getSession() { return localStorage.getItem(SESSION_KEY); }
+
+    function emailValid(email) {
+      return /\S+@\S+\.\S+/.test(email);
+    }
+
+    function show(el) { el.classList.remove('hidden'); }
+    function hide(el) { el.classList.add('hidden'); }
+
+    function switchTab(tab) {
+      const tabLogin = document.getElementById('tabLogin');
+      const tabRegister = document.getElementById('tabRegister');
+      const loginPanel = document.getElementById('loginPanel');
+      const registerPanel = document.getElementById('registerPanel');
+      if (tab === 'login') {
+        tabLogin.classList.add('active');
+        tabRegister.classList.remove('active');
+        show(loginPanel); hide(registerPanel);
+        loginPanel.querySelector('input')?.focus();
+      } else {
+        tabRegister.classList.add('active');
+        tabLogin.classList.remove('active');
+        show(registerPanel); hide(loginPanel);
+        registerPanel.querySelector('input')?.focus();
+      }
+    }
+
+    function goDashboard() {
+      hide(document.getElementById('authCard'));
+      show(document.getElementById('dashboard'));
+      renderSummary();
+      populateProfileForm();
+    }
+
+    function goAuth() {
+      show(document.getElementById('authCard'));
+      hide(document.getElementById('dashboard'));
+    }
+
+    function renderSummary() {
+      const s = document.getElementById('summary');
+      if (!currentUser) { s.innerHTML = ''; return; }
+      const { role, name, email, phone, profile = {} } = currentUser;
+      const researchInterests = (profile.researchInterests || []).filter(Boolean).join(', ');
+      s.innerHTML = `
+        <div><strong>${name || ''}</strong></div>
+        <div class="muted">${role ? role[0].toUpperCase() + role.slice(1) : ''}</div>
+        <div class="muted">${email || ''}</div>
+        ${phone ? `<div class="muted">${phone}</div>` : ''}
+        ${role === 'faculty' && profile.specialization ? `<div class="summary-chip">${profile.specialization}</div>` : ''}
+        ${role === 'faculty' && researchInterests ? `<div class="summary-chip">${researchInterests}</div>` : ''}
+        ${role === 'institution' && profile.institution ? `<div class="summary-chip">${profile.institution}</div>` : ''}
+      `;
+    }
+
+    function populateProfileForm() {
+      const u = currentUser || {};
+      const p = u.profile || {};
+      document.getElementById('pfName').value = u.name || '';
+      document.getElementById('pfEmail').value = u.email || '';
+      document.getElementById('pfPhone').value = u.phone || '';
+      document.getElementById('pfRole').value = u.role || '';
+
+      const isFaculty = u.role === 'faculty';
+      const fWrap = document.getElementById('pfFaculty');
+      const iWrap = document.getElementById('pfInstitution');
+      if (isFaculty) { show(fWrap); hide(iWrap); } else { show(iWrap); hide(fWrap); }
+
+      if (isFaculty) {
+        document.getElementById('pfQualification').value = p.qualification || '';
+        document.getElementById('pfSpecialization').value = p.specialization || '';
+        document.getElementById('pfTeachingExp').value = p.teachingExp || '';
+        document.getElementById('pfResearchExp').value = p.researchExp || '';
+        document.getElementById('pfCurrentSalary').value = p.currentSalary || '';
+        document.getElementById('pfExpectedSalary').value = p.expectedSalary || '';
+        document.getElementById('pfCV').value = p.cvName || '';
+
+        // Populate research interests tags
+        const container = document.getElementById('researchTags');
+        container.querySelectorAll('.tag').forEach(n => n.remove());
+        (p.researchInterests || []).forEach(addResearchTag);
+      } else {
+        document.getElementById('pfInstitution').value = p.institution || '';
+        document.getElementById('pfInstitutionAddress').value = p.institutionAddress || '';
+        document.getElementById('pfHiringSubjects').value = p.hiringSubjects || '';
+        document.getElementById('pfInstitutionSite').value = p.institutionSite || '';
+      }
+
+      document.getElementById('profileMsg').textContent = '';
+    }
+
+    function addResearchTag(interest) {
+      const trim = (interest || '').trim();
+      if (!trim) return;
+      const container = document.getElementById('researchTags');
+      const tag = document.createElement('span');
+      tag.className = 'tag';
+      tag.textContent = trim;
+      const btn = document.createElement('button');
+      btn.type = 'button';
+      btn.setAttribute('aria-label', `Remove ${trim}`);
+      btn.textContent = '×';
+      btn.addEventListener('click', () => { tag.remove(); });
+      tag.appendChild(btn);
+      container.insertBefore(tag, document.getElementById('researchInput'));
+    }
+
+    function getResearchFromTags() {
+      return Array.from(document.querySelectorAll('#researchTags .tag'))
+        .map(t => t.childNodes[0].nodeValue?.trim())
+        .filter(Boolean);
+    }
+
+    // Location Verification Functions
+
+    function calculateDistance(lat1, lon1, lat2, lon2) {
+      const R = 6371; // km
+      const dLat = (lat2 - lat1) * Math.PI / 180;
+      const dLon = (lon2 - lon1) * Math.PI / 180;
+      const a = Math.sin(dLat/2) * Math.sin(dLat/2) +
+        Math.cos(lat1 * Math.PI / 180) * Math.cos(lat2 * Math.PI / 180) *
+        Math.sin(dLon/2) * Math.sin(dLon/2);
+      const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
+      return R * c;
+    }
+    function verifyLocation() {
+      const verifyBtn = document.getElementById('verifyLocationBtn');
+      const locationDetails = document.getElementById('locationDetails');
+      const detectedLocation = document.getElementById('detectedLocation');
+      const companyAddress = document.getElementById('companyAddress');
+      const verificationStatus = document.getElementById('verificationStatus');
+      const locationIcon = document.querySelector('.location-icon');
+      
+      // Get institution address from form
+      const companyAddressValue = document.getElementById('regInstitutionAddress').value.trim();
+      
+      if (!companyAddressValue) {
+        alert('Please enter your institution address first');
+        return;
+      }
+      
+      // Update UI to show verification in progress
+      verifyBtn.textContent = 'Verifying Location...';
+      verifyBtn.disabled = true;
+      locationIcon.className = 'location-icon pending';
+      locationIcon.textContent = '⏳';
+      
+      // Show location details
+      companyAddress.textContent = companyAddressValue;
+      show(locationDetails);
+      
+      if (!navigator.geolocation) {
+        alert('Geolocation is not supported by your browser.');
+        verifyBtn.textContent = 'Verify My Location';
+        verifyBtn.disabled = false;
+        return;
+      }
+
+      navigator.geolocation.getCurrentPosition(
+        async (position) => {
+          try {
+            const lat = position.coords.latitude;
+            const lon = position.coords.longitude;
+            const accuracy = position.coords.accuracy;
+            
+            console.log(`Location acquired: ${lat}, ${lon} (±${accuracy}m)`);
+            
+            // Helper function to fetch with timeout and proper headers
+            async function fetchWithTimeout(url, timeout = 8000) {
+              const controller = new AbortController();
+              const timeoutId = setTimeout(() => controller.abort(), timeout);
+              
+              try {
+                const response = await fetch(url, {
+                  signal: controller.signal,
+                  headers: {
+                    'User-Agent': 'SmartHiring-FacultyPlatform/1.0',
+                    'Accept': 'application/json'
+                  }
+                });
+                clearTimeout(timeoutId);
+                
+                if (!response.ok) {
+                  throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+                }
+                
+                return await response.json();
+              } catch (err) {
+                clearTimeout(timeoutId);
+                if (err.name === 'AbortError') {
+                  throw new Error('Request timed out. Please check your internet connection.');
+                }
+                throw err;
+              }
+            }
+            
+            // Use Nominatim for reverse geocoding with building-level detail
+            detectedLocation.textContent = 'Fetching your location...';
+            const data = await fetchWithTimeout(
+              `https://nominatim.openstreetmap.org/reverse?format=json&lat=${lat}&lon=${lon}&zoom=18&addressdetails=1`
+            );
+            
+            const detected = data.display_name || 'Unknown location';
+            detectedLocation.textContent = `${detected} (±${Math.round(accuracy)}m accuracy)`;
+            
+            // Wait 1 second to respect Nominatim rate limit (1 req/sec)
+            await new Promise(resolve => setTimeout(resolve, 1200));
+            
+            // Geocode institution address
+            verificationStatus.textContent = 'Geocoding institution address...';
+            const companyData = await fetchWithTimeout(
+              `https://nominatim.openstreetmap.org/search?format=json&q=${encodeURIComponent(companyAddressValue)}&addressdetails=1&limit=1`
+            );
+            
+            if (!companyData || companyData.length === 0) {
+              throw new Error('Could not find the institution address. Please check the address and try again.');
+            }
+            
+            const companyLat = parseFloat(companyData[0].lat);
+            const companyLon = parseFloat(companyData[0].lon);
+            
+            // Compute distance in kilometers
+            const distance = calculateDistance(lat, lon, companyLat, companyLon);
+            const distanceMeters = Math.round(distance * 1000); // Convert to meters
+            
+            // Location range verification with graduated thresholds
+            // - Within 500m: Excellent match (same building/campus)
+            // - Within 1km: Good match (nearby/same area)
+            // - Within 3km: Acceptable match (same locality)
+            // - Beyond 3km: Too far
+            
+            let verificationLevel = '';
+            let isVerified = false;
+            
+            if (distance <= 0.5) { // Within 500 meters
+              verificationLevel = 'Excellent - On site';
+              isVerified = true;
+            } else if (distance <= 1.0) { // Within 1 kilometer
+              verificationLevel = 'Good - Nearby';
+              isVerified = true;
+            } else if (distance <= 3.0) { // Within 3 kilometers
+              verificationLevel = 'Acceptable - Same area';
+              isVerified = true;
+            } else {
+              verificationLevel = 'Too far';
+              isVerified = false;
+            }
+            
+            // Format distance display
+            let distanceText = distanceMeters < 1000 
+              ? `${distanceMeters}m` 
+              : `${(distance).toFixed(2)}km`;
+            
+            if (isVerified) {
+              locationVerified = true;
+              verificationStatus.innerHTML = `<strong>Verified ✓</strong><br/>Distance: ${distanceText} (${verificationLevel})`;
+              verificationStatus.style.color = 'var(--success)';
+              locationIcon.className = 'location-icon success';
+              locationIcon.textContent = '✓';
+              document.getElementById('registerSubmitBtn').disabled = false;
+              verifyBtn.textContent = 'Location Verified';
+              document.getElementById('registerMsg').textContent = '';
+              document.getElementById('registerMsg').style.color = 'var(--success)';
+            } else {
+              locationVerified = false;
+              verificationStatus.innerHTML = `<strong>Location Mismatch ✗</strong><br/>Distance: ${distanceText} (${verificationLevel})`;
+              verificationStatus.style.color = 'var(--danger)';
+              locationIcon.className = 'location-icon error';
+              locationIcon.textContent = '✗';
+              document.getElementById('registerSubmitBtn').disabled = true;
+              verifyBtn.textContent = 'Retry Location Verification';
+              verifyBtn.disabled = false;
+              
+              // Show error message with distance info
+              document.getElementById('registerMsg').textContent = 
+                `Location verification failed. You are ${distanceText} from the institution address. Please ensure you are at or near your institution location (within 3km) and try again.`;
+            }
+          } catch (err) {
+            console.error('Location verification error:', err);
+            
+            let errorMsg = 'Error getting location details. ';
+            
+            // Provide specific error messages
+            if (err.message.includes('timed out')) {
+              errorMsg += 'The geocoding service is not responding. Please check your internet connection and try again.';
+            } else if (err.message.includes('Could not find')) {
+              errorMsg += err.message + '\n\nTip: Try entering a full address like "IIT Delhi, Hauz Khas, New Delhi, India"';
+            } else if (err.message.includes('HTTP 429')) {
+              errorMsg += 'Too many requests. Please wait 10 seconds and try again.';
+            } else if (err.message.includes('HTTP')) {
+              errorMsg += `Geocoding service error: ${err.message}. Please try again later.`;
+            } else {
+              errorMsg += err.message || 'Unknown error occurred.';
+            }
+            
+            alert(errorMsg);
+            verificationStatus.textContent = 'Verification failed';
+            verificationStatus.style.color = 'var(--danger)';
+            verifyBtn.textContent = 'Retry Location Verification';
+            verifyBtn.disabled = false;
+            locationIcon.className = 'location-icon error';
+            locationIcon.textContent = '✗';
+          }
+        },
+        (error) => {
+          console.error('Geolocation error:', error);
+          
+          let errorMsg = '';
+          switch(error.code) {
+            case error.PERMISSION_DENIED:
+              errorMsg = 'Location access denied. Please enable location permissions in your browser settings and reload the page.';
+              break;
+            case error.POSITION_UNAVAILABLE:
+              errorMsg = 'Location information is unavailable. Please ensure GPS/location services are enabled on your device.';
+              break;
+            case error.TIMEOUT:
+              errorMsg = 'Location request timed out. Please ensure you have a stable internet connection and try again.';
+              break;
+            default:
+              errorMsg = 'An unknown error occurred while accessing your location: ' + error.message;
+          }
+          
+          alert(errorMsg);
+          verificationStatus.textContent = 'Location access failed';
+          verificationStatus.style.color = 'var(--danger)';
+          verifyBtn.textContent = 'Retry Location Verification';
+          verifyBtn.disabled = false;
+          locationIcon.className = 'location-icon error';
+          locationIcon.textContent = '✗';
+        },
+        {
+          enableHighAccuracy: true,
+          timeout: 15000,  // 15 seconds timeout for location acquisition
+          maximumAge: 0    // Don't use cached position
+        }
+      );
+    }
+    
+    
+    // Resume Screener Functions (DOCX)
+    async function screenResume() {
+      try {
+        const input = document.getElementById('resumeDocx');
+        const file = input?.files?.[0];
+        const out = document.getElementById('resumeSkills');
+        if (!file) { out.textContent = 'Please select a .docx resume to analyze.'; out.style.color='var(--danger)'; return; }
+        if (file.type !== 'application/vnd.openxmlformats-officedocument.wordprocessingml.document' && !file.name.toLowerCase().endsWith('.docx')) {
+          alert('Please upload a .docx file.');
+          return;
+        }
+        out.style.color='';
+        out.textContent = 'Extracting text and skills...';
+        const text = await extractDocxText(file);
+        const skills = extractSkills(text);
+        if (skills.length === 0) {
+          out.innerHTML = '<div>No known skills detected. Try ensuring your resume includes standard skill keywords.</div>';
+        } else {
+          out.innerHTML = '<h4>Extracted Skills</h4><ul style="padding-left: 18px; margin: 8px 0 0;">' + skills.map(s => '<li>' + s + '</li>').join('') + '</ul>';
+        }
+      } catch (e) {
+        alert('Error screening resume: ' + (e.message || e));
+      }
+    }
+
+    async function extractDocxText(file) {
+      const arrayBuffer = await file.arrayBuffer();
+      const result = await mammoth.extractRawText({ arrayBuffer });
+      return result.value || '';
+    }
+
+    function extractSkills(text) {
+      // Normalize text and keep separators that are common in tech terms (e.g., '-', '/', '+', '.')
+      const norm = (' ' + (text || '').toLowerCase().replace(/[^a-z0-9+.#\/\- ]+/g, ' ') + ' ');
+
+      // Regex-based dictionary with synonyms/variants for robust matching
+      const patterns = [
+        // Core AI/ML/Data roles and domains
+        { label: 'Artificial Intelligence (AI)', re: /\b(ai|artificial intelligence)\b/ },
+        { label: 'Machine Learning (ML)', re: /\b(ml|machine learning)\b/ },
+        { label: 'Deep Learning', re: /\b(deep learning|dl)\b/ },
+        { label: 'Data Science', re: /\b(data science|data scientist|ds)\b/ },
+        { label: 'Data Analysis', re: /\b(data analysis|data analyst|analytics)\b/ },
+        { label: 'Business Analytics', re: /\b(business analytics|business analyst)\b/ },
+        { label: 'Computer Vision', re: /\b(computer vision)\b/ }, // avoid CV false positive
+        { label: 'Natural Language Processing (NLP)', re: /\b(nlp|natural language processing)\b/ },
+        { label: 'Neural Networks', re: /\b(neural networks?|ann|cnn|rnn|lstm|gan[s]?)\b/ },
+        { label: 'Generative AI', re: /\b(generative ai|genai|diffusion models?|stable diffusion|transformers?)\b/ },
+        { label: 'Large Language Models (LLMs)', re: /\b(llms?|large language models?)\b/ },
+        { label: 'Reinforcement Learning', re: /\breinforcement learning\b/ },
+        { label: 'MLOps', re: /\b(mlops|model ops|modelops)\b/ },
+        { label: 'Feature Engineering', re: /\b(feature engineering)\b/ },
+        { label: 'Model Deployment/Serving', re: /\b(model (deployment|serving)|inference|edge ai)\b/ },
+        { label: 'Statistics', re: /\b(statistics|statistical (analysis|model(?:ing|ling)))\b/ },
+
+        // Languages
+        { label: 'Python', re: /\bpython\b/ },
+        { label: 'R', re: /\br\b/ },
+        { label: 'Java', re: /\bjava\b/ },
+        { label: 'JavaScript', re: /\bjavascript\b/ },
+        { label: 'TypeScript', re: /\btypescript\b/ },
+
+        // Python/Data ecosystem
+        { label: 'NumPy', re: /\bnumpy\b/ },
+        { label: 'Pandas', re: /\bpandas\b/ },
+        { label: 'SciPy', re: /\bscipy\b/ },
+        { label: 'scikit-learn', re: /\b(scikit[- ]?learn|sklearn)\b/ },
+        { label: 'TensorFlow', re: /\btensor[- ]?flow\b/ },
+        { label: 'Keras', re: /\bkeras\b/ },
+        { label: 'PyTorch', re: /\bpytorch\b/ },
+        { label: 'OpenCV', re: /\b(opencv)\b/ },
+        { label: 'NLP Libraries', re: /\b(spacy|nltk|gensim|hugging ?face)\b/ },
+        { label: 'MATLAB', re: /\bmatlab\b/ },
+
+        // Data Engineering / Big Data
+        { label: 'SQL', re: /\bsql\b/ },
+        { label: 'MySQL', re: /\bmysql\b/ },
+        { label: 'PostgreSQL', re: /\b(postgre?s?q?l|postgres)\b/ },
+        { label: 'NoSQL', re: /\bnosql\b/ },
+        { label: 'MongoDB', re: /\bmongodb\b/ },
+        { label: 'Big Data', re: /\b(big data|hadoop|mapreduce)\b/ },
+        { label: 'Apache Spark', re: /\b(spark|pyspark)\b/ },
+        { label: 'ETL', re: /\betl\b/ },
+        { label: 'Airflow', re: /\bairflow\b/ },
+
+        // Visualization / BI
+        { label: 'Tableau', re: /\btableau\b/ },
+        { label: 'Power BI', re: /\bpower ?bi\b/ },
+        { label: 'Excel', re: /\bexcel\b/ },
+        
+        // Cloud / DevOps
+        { label: 'AWS', re: /\baws\b/ },
+        { label: 'Azure', re: /\bazure\b/ },
+        { label: 'GCP', re: /\b(gcp|google cloud)\b/ },
+        { label: 'AWS SageMaker', re: /\bsagemaker\b/ },
+        { label: 'Azure ML', re: /\b(azure machine learning|azure ml)\b/ },
+        { label: 'Vertex AI', re: /\bvertex ai\b/ },
+        { label: 'Docker', re: /\bdocker\b/ },
+        { label: 'Kubernetes', re: /\b(kubernetes|k8s)\b/ },
+        { label: 'Git', re: /\bgit\b/ },
+        { label: 'CI/CD', re: /\b(ci\/?cd|continuous integration|continuous delivery)\b/ },
+
+        // Web stack (common on data resumes)
+        { label: 'HTML', re: /\bhtml\b/ },
+        { label: 'CSS', re: /\bcss\b/ },
+        { label: 'React', re: /\breact\b/ },
+        { label: 'Node.js', re: /\bnode\.?js\b/ },
+        { label: 'Express', re: /\bexpress\b/ },
+
+        // Roles/titles
+        { label: 'AI Engineer', re: /\b(ai engineer)\b/ },
+        { label: 'ML Engineer', re: /\b(ml engineer|machine learning engineer)\b/ },
+        { label: 'Data Engineer', re: /\bdata engineer\b/ },
+        { label: 'Data Scientist', re: /\bdata scientist\b/ },
+        { label: 'Data Analyst', re: /\bdata analyst\b/ },
+        { label: 'Research Scientist (AI/ML)', re: /\bresearch scientist\b.*\b(ai|ml|machine learning|artificial intelligence)\b/ },
+      ];
+
+      const found = new Set();
+      for (const p of patterns) {
+        if (p.re.test(norm)) found.add(p.label);
+      }
+      return Array.from(found).sort();
+    }
+
+    // Event handlers
+    function handleLogin(e) {
+      e.preventDefault();
+      const email = document.getElementById('loginEmail').value.trim();
+      const password = document.getElementById('loginPassword').value;
+      const msg = document.getElementById('loginMsg');
+      msg.textContent = '';
+      if (!emailValid(email)) { msg.textContent = 'Please enter a valid email address.'; return; }
+      const user = findUserByEmail(email);
+      if (!user || user.password !== password) { msg.textContent = 'Invalid email or password.'; return; }
+      currentUser = user;
+      setSession(user.email);
+      
+      // Redirect based on user role
+      if (user.role === 'faculty') {
+        window.location.href = 'faculty.html';
+      } else if (user.role === 'institution') {
+        window.location.href = 'institution.html';
+      } else {
+        // Fallback to dashboard for any other roles
+        goDashboard();
+      }
+    }
+
+    function handleRegister(e) {
+      e.preventDefault();
+      const role = document.querySelector('input[name="role"]:checked').value;
+      const name = document.getElementById('regName').value.trim();
+      const email = document.getElementById('regEmail').value.trim();
+      const password = document.getElementById('regPassword').value;
+      const phone = document.getElementById('regPhone').value.trim();
+      const terms = document.getElementById('regTerms').checked;
+      const msg = document.getElementById('registerMsg');
+      msg.textContent = '';
+
+      if (!name) return msg.textContent = 'Please enter your full name.';
+      if (!emailValid(email)) return msg.textContent = 'Please enter a valid email address.';
+      if (!password || password.length < 8) return msg.textContent = 'Password should be at least 8 characters.';
+      if (!terms) return msg.textContent = 'You must agree to the Terms & Conditions to continue.';
+      if (findUserByEmail(email)) return msg.textContent = 'An account with this email already exists.';
+
+      // For institutions, check if location is verified
+      if (role === 'institution' && !locationVerified) {
+        return msg.textContent = 'Please complete location verification before registering.';
+      }
+
+      const profile = {};
+      if (role === 'faculty') {
+        profile.qualification = document.getElementById('regQualification').value;
+        profile.specialization = document.getElementById('regSpecialization').value.trim();
+        profile.teachingExp = Number(document.getElementById('regTeachingExp').value || 0);
+        profile.researchExp = Number(document.getElementById('regResearchExp').value || 0);
+        profile.researchInterests = (document.getElementById('regResearchInterests').value || '').split(',').map(s => s.trim()).filter(Boolean);
+        profile.currentSalary = document.getElementById('regCurrentSalary').value.trim();
+        profile.expectedSalary = document.getElementById('regExpectedSalary').value.trim();
+        const cv = document.getElementById('regCV');
+        if (cv.files && cv.files[0]) {
+          const fileName = cv.files[0].name;
+          const fileExtension = fileName.split('.').pop().toLowerCase();
+          if (fileExtension !== 'doc' && fileExtension !== 'docx') {
+            return msg.textContent = 'CV/Resume must be a Word document (.doc or .docx file only).';
+          }
+          profile.cvName = fileName;
+        } else {
+          profile.cvName = '';
+        }
+        if (!profile.specialization) return msg.textContent = 'Please enter your specialization/subject.';
+      } else {
+        profile.institution = document.getElementById('regInstitution').value.trim();
+        profile.institutionAddress = document.getElementById('regInstitutionAddress').value.trim();
+        profile.hiringSubjects = document.getElementById('regHiringSubjects').value.trim();
+        profile.institutionSite = document.getElementById('regInstitutionSite').value.trim();
+        if (!profile.institution) return msg.textContent = 'Please enter your institution name.';
+        if (!profile.institutionAddress) return msg.textContent = 'Please enter your institution address.';
+      }
+
+      const user = { role, name, email, password, phone, profile };
+      upsertUser(user);
+      currentUser = user;
+      setSession(user.email);
+      
+      // Redirect based on user role
+      if (user.role === 'faculty') {
+        window.location.href = 'faculty.html';
+      } else if (user.role === 'institution') {
+        window.location.href = 'institution.html';
+      } else {
+        // Fallback to dashboard for any other roles
+        goDashboard();
+      }
+    }
+
+    function handleProfileSave(e) {
+      e.preventDefault();
+      if (!currentUser) return;
+
+      currentUser.name = document.getElementById('pfName').value.trim();
+      currentUser.phone = document.getElementById('pfPhone').value.trim();
+      const p = currentUser.profile || {};
+
+      if (currentUser.role === 'faculty') {
+        p.qualification = document.getElementById('pfQualification').value;
+        p.specialization = document.getElementById('pfSpecialization').value.trim();
+        p.teachingExp = Number(document.getElementById('pfTeachingExp').value || 0);
+        p.researchExp = Number(document.getElementById('pfResearchExp').value || 0);
+        p.researchInterests = getResearchFromTags();
+        p.currentSalary = document.getElementById('pfCurrentSalary').value.trim();
+        p.expectedSalary = document.getElementById('pfExpectedSalary').value.trim();
+        p.cvName = document.getElementById('pfCV').value.trim();
+      } else {
+        p.institution = document.getElementById('pfInstitution').value.trim();
+        p.institutionAddress = document.getElementById('pfInstitutionAddress').value.trim();
+        p.hiringSubjects = document.getElementById('pfHiringSubjects').value.trim();
+        p.institutionSite = document.getElementById('pfInstitutionSite').value.trim();
+      }
+
+      currentUser.profile = p;
+      upsertUser(currentUser);
+      document.getElementById('profileMsg').textContent = 'Profile updated successfully!';
+      renderSummary();
+    }
+
+    function handleLogout() {
+      clearSession();
+      currentUser = null;
+      locationVerified = false;
+      goAuth();
+      switchTab('login');
+    }
+
+    function handleDelete() {
+      if (!currentUser) return;
+      if (!confirm('Are you sure you want to permanently delete your account? This action cannot be undone.')) return;
+      const users = getUsers().filter(u => u.email !== currentUser.email);
+      saveUsers(users);
+      handleLogout();
+    }
+
+    function initSkillsInput() {
+      const input = document.getElementById('skillInput');
+      input.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter') {
+          e.preventDefault();
+          addSkillTag(input.value);
+          input.value = '';
+        }
+      });
+    }
+
+    function setupRoleSwitching() {
+      const roleRadios = document.querySelectorAll('input[name="role"]:checked');
+      const facultyFields = document.getElementById('facultyFields');
+      const institutionFields = document.getElementById('institutionFields');
+      const registerSubmitBtn = document.getElementById('registerSubmitBtn');
+
+      function update() {
+        const role = document.querySelector('input[name="role"]:checked').value;
+        if (role === 'faculty') {
+          show(facultyFields);
+          hide(institutionFields);
+          registerSubmitBtn.disabled = false;
+        } else {
+          show(institutionFields);
+          hide(facultyFields);
+          // For institutions, disable submit until location is verified
+          registerSubmitBtn.disabled = !locationVerified;
+        }
+      }
+      roleRadios.forEach(r => r.addEventListener('change', update));
+      update();
+    }
+
+    function loadSessionAndRoute() {
+      const email = getSession();
+      if (!email) { goAuth(); return; }
+      const user = findUserByEmail(email);
+      if (!user) { clearSession(); goAuth(); return; }
+      currentUser = user; goDashboard();
+    }
+
+    // Bind UI events
+    window.addEventListener('DOMContentLoaded', () => {
+      document.getElementById('yr').textContent = new Date().getFullYear();
+
+      document.getElementById('tabLogin').addEventListener('click', () => switchTab('login'));
+      document.getElementById('tabRegister').addEventListener('click', () => switchTab('register'));
+      document.getElementById('tabLogin').addEventListener('keydown', (e) => { if (e.key==='Enter' || e.key===' ') switchTab('login'); });
+      document.getElementById('tabRegister').addEventListener('keydown', (e) => { if (e.key==='Enter' || e.key===' ') switchTab('register'); });
+
+      document.getElementById('goRegister').addEventListener('click', (e) => { e.preventDefault(); switchTab('register'); });
+
+      document.getElementById('loginForm').addEventListener('submit', handleLogin);
+      document.getElementById('registerForm').addEventListener('submit', handleRegister);
+      document.getElementById('profileForm').addEventListener('submit', handleProfileSave);
+      document.getElementById('logoutBtn').addEventListener('click', handleLogout);
+      document.getElementById('deleteBtn').addEventListener('click', handleDelete);
+      
+      // Location verification button
+      document.getElementById('verifyLocationBtn').addEventListener('click', verifyLocation);
+
+      document.getElementById('regCV').addEventListener('change', function(e) {
+        const file = e.target.files[0];
+        const helpText = e.target.nextElementSibling;
+        
+        if (file) {
+          const fileName = file.name;
+          const fileExtension = fileName.split('.').pop().toLowerCase();
+          
+          if (fileExtension !== 'doc' && fileExtension !== 'docx') {
+            helpText.textContent = 'Error: Only Word documents (.doc, .docx) are accepted. Please select a valid file.';
+            helpText.style.color = 'var(--danger)';
+            e.target.value = ''; // Clear the invalid file
+          } else {
+            helpText.textContent = `Selected: ${fileName} - Valid Word document.`;
+            helpText.style.color = 'var(--success)';
+          }
+        } else {
+          helpText.textContent = 'Only Word documents (.doc, .docx) are accepted. Filename will be stored locally for demo purposes.';
+          helpText.style.color = '';
+        }
+      });
+
+      setupRoleSwitching();
+      initSkillsInput();
+      loadSessionAndRoute();
+    });
+  </script>
+</body>
+</html>
